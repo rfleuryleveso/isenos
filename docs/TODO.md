@@ -1,0 +1,13 @@
+# Todo-list
+- Finish the memory allocation algorithm
+- Create a malloc function
+- Read ACPI tables and create data structures to use them efficiently
+- Create disk access functions
+- Create GOP functions
+- Create mouse/keyboard API
+- Create an ELF Loader (Memory mapping)
+- Implement relocations
+- Setup IDT and interrupt handlers
+- Setup timed interrupts
+- Implement context switching
+- DOOM.
