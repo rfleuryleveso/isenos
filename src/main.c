@@ -5,9 +5,9 @@
 #include "memory/efi_memory_types.h"
 #include "memory/kernel_memory_information.h"
 #include "memory/physical_ram/physical_ram_manager.h"
-#include "memory/ram_allocation/ram_allocation_manager.h"
+#include "memory/page_allocation/page_allocation_manager.h"
 #include "common/os-config.h"
-#include "memory/ram_allocation/ram_allocation_manager_allocation.h"
+#include "memory/page_allocation/page_allocation_manager_allocation.h"
 
 uint64_t main (IBL_ISENOS_DATA *IsenOSEntrypointData)
 {
@@ -48,9 +48,11 @@ uint64_t main (IBL_ISENOS_DATA *IsenOSEntrypointData)
 
   printf ("VirtualMemory: %x - %x (%d bytes) \n", IsenOSEntrypointData->VmmStart, IsenOSEntrypointData->VmmEnd,
 		  IsenOSEntrypointData->VmmEnd - IsenOSEntrypointData->VmmStart);
-  printf ("Kmm.pmm_ram_range_size %d \n", Kmm.pmm_ram_range_size);
+  printf ("Kmm.pmm_ram_range_size %d \n", Kmm.prm_ram_range_size);
 
-  RAMInit();
+  PAMInit();
+
+  PAMAddAllocation(IsenOSEntrypointData->KernelStart)
 
   bkpt();
 

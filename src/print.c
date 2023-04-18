@@ -47,6 +47,8 @@ void write_serial(char a) {
     outb(COM1_ADDR,a);
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
 void
 printnum(
         register unsigned int	u,		/* number to print */
@@ -418,3 +420,4 @@ printf(const char *fmt, ...)
     _doprnt(fmt, &listp, write_serial, 16);
     va_end(listp);
 }
+#pragma GCC diagnostic pop
