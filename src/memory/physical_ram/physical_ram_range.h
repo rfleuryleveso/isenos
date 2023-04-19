@@ -7,6 +7,7 @@
 
 #include "stdint.h"
 
+#define PRMRR_FLAG_KERNEL 0x2
 #define PRMRR_FLAG_USED 0x1
 
 struct PRM_RAM_RANGE {

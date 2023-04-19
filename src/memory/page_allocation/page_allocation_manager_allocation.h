@@ -7,10 +7,12 @@
 
 #include "stdint.h"
 
-#define PAMA_FLAG_RAMANAGER 0x4
-#define PAMA_FLAG_PML4 0x2
-#define PAMA_FLAG_KERNEL 0x1
-#define PAMA_FLAG_USERSPACE 0x0
+#define PAMA_FLAG_DO_NOT_INCLUDE_IN_VMT 0x20
+#define PAMA_FLAG_RAMANAGER 0x10
+#define PAMA_FLAG_VMT 0x8
+#define PAMA_FLAG_KERNEL 0x4
+#define PAMA_FLAG_USERSPACE 0x2
+#define PAMA_FLAG_PRESENT 0x1
 
 /**
  * Represents one allocation of exactly one page of size (ISENOS_PAGE_SIZE) to a program / kernel

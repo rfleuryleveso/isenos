@@ -4,7 +4,7 @@ OBJs=$(C_SRCs:.c=.o)
 #cf. https://wiki.osdev.org/GCC_Cross-Compiler
 CC=gcc
 LD=ld
-C_FLAGS=-W -Wall -fno-exceptions -nostartfiles -ggdb -g -ffreestanding -O2 -pedantic -Wall -Wextra -nostdlib
+C_FLAGS=-W -Wall -fno-exceptions -nostartfiles -ggdb -g -ffreestanding -O2 -pedantic -Wall -Wextra -nostdlib -L./deps/
 
 
 

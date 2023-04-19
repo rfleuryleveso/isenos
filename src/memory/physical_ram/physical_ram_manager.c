@@ -4,7 +4,7 @@
 
 #include "physical_ram_manager.h"
 
-void PRMAddRange(uint64_t start, uint64_t end) {
+struct PRM_RAM_RANGE * PRMAddRange(uint64_t start, uint64_t end) {
     // Retrieve a pointer to the current RAM range
     struct PRM_RAM_RANGE* CurrentPmmRamRange = &Kmm.prm_ram_ranges[Kmm.prm_ram_range_size];
 
@@ -14,4 +14,6 @@ void PRMAddRange(uint64_t start, uint64_t end) {
 
     // We must increase the ram range size
     CurrentPmmRamRange->index |= Kmm.prm_ram_range_size++;
+
+	return CurrentPmmRamRange;
 }

@@ -3,21 +3,21 @@ ENTRY(main)
 
 SECTIONS
 {
-    . = 0xC0000000;
+    . = 0xFFFF800000000000;
     _kernel_start = .;
-    .text ALIGN (4K) : AT (ADDR (.text))
+    .text ALIGN (2M) : AT (ADDR (.text))
     {
         *(.text)
     }
-    .rodata ALIGN (4K) : AT (ADDR (.rodata))
+    .rodata ALIGN (2M) : AT (ADDR (.rodata))
     {
         *(.rodata)
     }
-    .data ALIGN (4K) : AT (ADDR (.data))
+    .data ALIGN (2M) : AT (ADDR (.data))
     {
         *(.data)
     }
-    .bss ALIGN (4K) : AT (ADDR (.bss))
+    .bss ALIGN (2M) : AT (ADDR (.bss))
     {
         *(COMMON)
         *(.bss)

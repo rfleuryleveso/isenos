@@ -5,12 +5,21 @@
 #ifndef _VIRTUAL_MEMORY_TABLES_MANAGER_H_
 #define _VIRTUAL_MEMORY_TABLES_MANAGER_H_
 
+#include "../kernel_memory_information.h"
+#include "../../print.h"
 #include "stdint.h"
+#include "inttypes.h"
+#include "vm.h"
+#include "../page_allocation/page_allocation_manager.h"
+#include "../../common/memory.h"
+#include "../../common/math.h"
+
 
 /**
- * This will regenerate the correct tables
- * @return PML4 base, for CR3
+ * Update the virtual memory map
+ * @param identity_mapped_memory
+ * @return
  */
-uint64_t VMTMGenerateTables();
+uint64_t VMTMUpdate (uint8_t identity_mapped_memory);
 
 #endif //_VIRTUAL_MEMORY_TABLES_MANAGER_H_

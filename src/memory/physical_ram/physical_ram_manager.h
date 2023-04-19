@@ -9,7 +9,7 @@
 #include "physical_ram_range.h"
 #include "../kernel_memory_information.h"
 
-void PRMAddRange(uint64_t start, uint64_t end);
+struct PRM_RAM_RANGE * PRMAddRange(uint64_t start, uint64_t end);
 
 
 #endif //ISENOS_PRELOADER_PHYSICAL_RAM_MANAGER_H
