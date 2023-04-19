@@ -12,6 +12,7 @@
 #include "memory/virtual_memory_tables/virtual_memory_tables_manager.h"
 #include "memory/virtual_memory_tables/static_mappings.h"
 #include "graphics/graphics_manager.h"
+#include "gdt/gdt.h"
 
 uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 {
@@ -96,6 +97,9 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
   // Init the Page Allocation Unit
   pam_init ();
+
+  // Setup GDT
+  setup_gdt();
 
   // Identity map the old VMT
   // This is used to make sure we don't overwrite the VMT

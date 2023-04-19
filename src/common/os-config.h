@@ -17,8 +17,10 @@
 
 #define PAM_BASE (ISENOS_KERNEL_STACK_BASE + 0x40000000)
 
+#define VMT_BASE (PAM_BASE + 0x40000000)
+
 // Map physical memory to virtual memory
-#define PHM_BASE (PAM_BASE + 0x40000000)
+#define PHM_BASE (VMT_BASE + 0x40000000)
 #define PHM_TOP (PAM_BASE + ISEN_MAPPED_MEMORY_SIZE_GB * 0x40000000)
 
 #define NULL 0

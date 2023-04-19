@@ -272,14 +272,24 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
 
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] pd_table_count = %d, pdp_table_count = %d, allocated_size = %d pages_count = %d\n", pd_table_count, pdp_table_count, allocated_size, pages_count);
 
+  // Find enough pages for the VMT
   uint64_t tables_page_physical = pam_find_free_pages (pages_count);
+  for(int page_index; page_index < pages_count; page_index++) {
+	  pam_add_allocation (
+		  tables_page_physical + (ISENOS_PAGE_SIZE * page_index),
+		  VMT_BASE + (ISENOS_PAGE_SIZE * page_index), PAMA_FLAG_PRESENT | PAMA_FLAG_VMT);
+  }
+
+  // Find the virtual address of the table
   uint64_t tables_page_virtual = mem_phys_to_virt (tables_page_physical);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] identity_mapped_memory = %d, tables_page_physical = %016"PRIx64 " tables_page_virtual = %016"PRIx64 " \n", identity_mapped_memory, tables_page_physical, tables_page_virtual);
 
+  // Fill the tables
   vmt_populate_page_table ((void *)tables_page_physical, pdp_table_count, pd_table_count, filled_pml4, filled_pdp, 0);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] Starting CR3 update sequence \n");
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] updating CR3 with PA = %016"PRIx64 " \n", tables_page_physical);
 
+  // Tell the CPU where to find the new pages
   asm ("movq  %0, %%cr3\n"::"r"(tables_page_physical));
   bkpt ();
 

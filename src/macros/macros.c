@@ -16,8 +16,5 @@ void outb (uint16_t _port, uint8_t _data)
   __asm__ __volatile__ ("outb %b0,%w1" : : "a" (_data), "d" (_port));
 }
 
-void bkpt ()
-{
-  __asm__("int3");
-}
+
 
