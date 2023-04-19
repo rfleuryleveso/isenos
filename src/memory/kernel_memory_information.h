@@ -16,20 +16,19 @@ struct KERNEL_MEMORY_INFORMATION {
 	// lmao, this is beyond hell. This CAN'T go well
 	uint8_t stack[8192];
 
+	// Total available memory in the system
+	uint64_t available_memory;
 
-    // Total available memory in the system
-    uint64_t available_memory;
-
-    // Pointer to the first PRM_RAM_RANGE
+	// Pointer to the first PRM_RAM_RANGE
 	// Set from the start, since we are already running in memory mapped mode.
-    struct PRM_RAM_RANGE prm_ram_ranges[KMI_PRM_RAM_RANGE_SIZE];
+	struct PRM_RAM_RANGE prm_ram_ranges[KMI_PRM_RAM_RANGE_SIZE];
 
-    // Number of entries in the prm_ram_ranges
-    uint64_t prm_ram_range_size;
+	// Number of entries in the prm_ram_ranges
+	uint64_t prm_ram_range_size;
 
-    // Pointer to the table of ram allocations. This is a fixed size
+	// Pointer to the table of ram allocations. This is a fixed size
 	// ONLY AVAILABLE WITH memory_setup_complete = true
-    struct PAGE_ALLOCATION_MANAGER_ALLOCATION* pam_allocations;
+	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_allocations;
 
 	// Number of PAM allocations
 	uint64_t pam_allocations_count;
@@ -42,10 +41,8 @@ struct KERNEL_MEMORY_INFORMATION {
 	uint64_t pam_base;
 	uint64_t pam_top;
 
-
 	// True, if memory setup has been completed for kernel and all memory is available correctly
 	uint8_t memory_setup_complete;
-
 
 };
 

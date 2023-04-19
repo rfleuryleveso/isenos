@@ -13,23 +13,23 @@
 
 typedef union {
 	struct {
-		uint64_t    Present              : 1;  // 0 = Not present in memory,
+		uint64_t Present: 1;  // 0 = Not present in memory,
 		//   1 = Present in memory
-		uint64_t    ReadWrite            : 1;  // 0 = Read-Only, 1= Read/Write
-		uint64_t    UserSupervisor       : 1;  // 0 = Supervisor, 1=User
-		uint64_t    WriteThrough         : 1;  // 0 = Write-Back caching,
+		uint64_t ReadWrite: 1;  // 0 = Read-Only, 1= Read/Write
+		uint64_t UserSupervisor: 1;  // 0 = Supervisor, 1=User
+		uint64_t WriteThrough: 1;  // 0 = Write-Back caching,
 		//   1 = Write-Through caching
-		uint64_t    CacheDisabled        : 1;  // 0 = Cached, 1=Non-Cached
-		uint64_t    Accessed             : 1;  // 0 = Not accessed,
+		uint64_t CacheDisabled: 1;  // 0 = Cached, 1=Non-Cached
+		uint64_t Accessed: 1;  // 0 = Not accessed,
 		//   1 = Accessed (set by CPU)
-		uint64_t    Reserved             : 1;  // Reserved
-		uint64_t    MustBeZero           : 2;  // Must Be Zero
-		uint64_t    Available            : 3;  // Available for use by system software
-		uint64_t    PageTableBaseAddress : 40; // Page Table Base Address
-		uint64_t    AvabilableHigh       : 11; // Available for use by system software
-		uint64_t    Nx                   : 1;  // No Execute bit
+		uint64_t Reserved: 1;  // Reserved
+		uint64_t MustBeZero: 2;  // Must Be Zero
+		uint64_t Available: 3;  // Available for use by system software
+		uint64_t PageTableBaseAddress: 40; // Page Table Base Address
+		uint64_t AvabilableHigh: 11; // Available for use by system software
+		uint64_t Nx: 1;  // No Execute bit
 	} Bits;
-	uint64_t    uint64;
+	uint64_t uint64;
 } PAGE_MAP_AND_DIRECTORY_POINTER;
 
 //
@@ -37,27 +37,27 @@ typedef union {
 //
 typedef union {
 	struct {
-		uint64_t    Present              : 1;  // 0 = Not present in memory,
+		uint64_t Present: 1;  // 0 = Not present in memory,
 		//   1 = Present in memory
-		uint64_t    ReadWrite            : 1;  // 0 = Read-Only, 1= Read/Write
-		uint64_t    UserSupervisor       : 1;  // 0 = Supervisor, 1=User
-		uint64_t    WriteThrough         : 1;  // 0 = Write-Back caching,
+		uint64_t ReadWrite: 1;  // 0 = Read-Only, 1= Read/Write
+		uint64_t UserSupervisor: 1;  // 0 = Supervisor, 1=User
+		uint64_t WriteThrough: 1;  // 0 = Write-Back caching,
 		//   1 = Write-Through caching
-		uint64_t    CacheDisabled        : 1;  // 0 = Cached, 1=Non-Cached
-		uint64_t    Accessed             : 1;  // 0 = Not accessed,
+		uint64_t CacheDisabled: 1;  // 0 = Cached, 1=Non-Cached
+		uint64_t Accessed: 1;  // 0 = Not accessed,
 		//   1 = Accessed (set by CPU)
-		uint64_t    Dirty                : 1;  // 0 = Not Dirty, 1 = written by
+		uint64_t Dirty: 1;  // 0 = Not Dirty, 1 = written by
 		//   processor on access to page
-		uint64_t    PAT                  : 1;  //
-		uint64_t    Global               : 1;  // 0 = Not global page, 1 = global page
+		uint64_t PAT: 1;  //
+		uint64_t Global: 1;  // 0 = Not global page, 1 = global page
 		//   TLB not cleared on CR3 write
-		uint64_t    Available            : 3;  // Available for use by system software
-		uint64_t    PageTableBaseAddress : 40; // Page Table Base Address
-		uint64_t    AvabilableHigh       : 11; // Available for use by system software
-		uint64_t    Nx                   : 1;  // 0 = Execute Code,
+		uint64_t Available: 3;  // Available for use by system software
+		uint64_t PageTableBaseAddress: 40; // Page Table Base Address
+		uint64_t AvabilableHigh: 11; // Available for use by system software
+		uint64_t Nx: 1;  // 0 = Execute Code,
 		//   1 = No Code Execution
 	} Bits;
-	uint64_t    uint64;
+	uint64_t uint64;
 } PAGE_TABLE_4K_ENTRY;
 
 //
@@ -65,29 +65,29 @@ typedef union {
 //
 typedef union {
 	struct {
-		uint64_t    Present              : 1;  // 0 = Not present in memory,
+		uint64_t Present: 1;  // 0 = Not present in memory,
 		//   1 = Present in memory
-		uint64_t    ReadWrite            : 1;  // 0 = Read-Only, 1= Read/Write
-		uint64_t    UserSupervisor       : 1;  // 0 = Supervisor, 1=User
-		uint64_t    WriteThrough         : 1;  // 0 = Write-Back caching,
+		uint64_t ReadWrite: 1;  // 0 = Read-Only, 1= Read/Write
+		uint64_t UserSupervisor: 1;  // 0 = Supervisor, 1=User
+		uint64_t WriteThrough: 1;  // 0 = Write-Back caching,
 		//   1=Write-Through caching
-		uint64_t    CacheDisabled        : 1;  // 0 = Cached, 1=Non-Cached
-		uint64_t    Accessed             : 1;  // 0 = Not accessed,
+		uint64_t CacheDisabled: 1;  // 0 = Cached, 1=Non-Cached
+		uint64_t Accessed: 1;  // 0 = Not accessed,
 		//   1 = Accessed (set by CPU)
-		uint64_t    Dirty                : 1;  // 0 = Not Dirty, 1 = written by
+		uint64_t Dirty: 1;  // 0 = Not Dirty, 1 = written by
 		//   processor on access to page
-		uint64_t    MustBe1              : 1;  // Must be 1
-		uint64_t    Global               : 1;  // 0 = Not global page, 1 = global page
+		uint64_t MustBe1: 1;  // Must be 1
+		uint64_t Global: 1;  // 0 = Not global page, 1 = global page
 		//   TLB not cleared on CR3 write
-		uint64_t    Available            : 3;  // Available for use by system software
-		uint64_t    PAT                  : 1;  //
-		uint64_t    MustBeZero           : 8;  // Must be zero;
-		uint64_t    PageTableBaseAddress : 31; // Page Table Base Address
-		uint64_t    AvabilableHigh       : 11; // Available for use by system software
-		uint64_t    Nx                   : 1;  // 0 = Execute Code,
+		uint64_t Available: 3;  // Available for use by system software
+		uint64_t PAT: 1;  //
+		uint64_t MustBeZero: 8;  // Must be zero;
+		uint64_t PageTableBaseAddress: 31; // Page Table Base Address
+		uint64_t AvabilableHigh: 11; // Available for use by system software
+		uint64_t Nx: 1;  // 0 = Execute Code,
 		//   1 = No Code Execution
 	} Bits;
-	uint64_t    uint64;
+	uint64_t uint64;
 } PAGE_TABLE_ENTRY;
 
 #pragma pack()
@@ -117,6 +117,5 @@ typedef union {
 #define PAGING_L4_ADDRESS_SHIFT  39
 
 #define PAGING_PML4E_NUMBER  4
-
 
 #endif //_VM_H_

@@ -17,7 +17,6 @@
 
 #define VMT_STATIC_MAPPING_FLAGS_PHYS 0x1
 
-
 struct VMT_STATIC_MAPPING {
 	uint8_t enabled;
 	uint64_t virtual_address;
@@ -26,10 +25,8 @@ struct VMT_STATIC_MAPPING {
 	uint64_t flags;
 };
 
-
 extern struct VMT_STATIC_MAPPING static_mappings[VMT_STATIC_MAPPING_COUNT];
 
-
-void vmt_init_static_mappings();
+void vmt_init_static_mappings ();
 
 #endif //_STATIC_MAPPINGS_H_

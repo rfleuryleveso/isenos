@@ -12,7 +12,6 @@
 
 typedef int boolean_t;
 
-
 typedef struct _ELF_INFO {
 	// will subtract this value from the Virtual address
 	// if zero then physical address is used
@@ -55,9 +54,9 @@ typedef struct _IBL_FRAMEBUFFERINFO {
 } IBL_FRAMEBUFFER_INFO;
 
 typedef struct _KERNEL_MEMORY_MAPPING {
-	uint64_t                       PhysicalBase;
-	uint64_t                       VirtualBase;
-	uint8_t                      PAGES;
+	uint64_t PhysicalBase;
+	uint64_t VirtualBase;
+	uint8_t PAGES;
 } KERNEL_MEMORY_MAPPING;
 
 typedef struct _IBL_ISENOSDATA {

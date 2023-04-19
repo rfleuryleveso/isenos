@@ -18,10 +18,10 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
   // This is a warcrime
   __asm__ volatile (
-	  "movq  %q0, %%rbp" :: "r" (&Kmm.stack[8191])
+	  "movq  %q0, %%rbp"::"r" (&Kmm.stack[8191])
 	  );
   __asm__ volatile (
-	  "movq  %q0, %%rsp" :: "r" (&Kmm.stack[8191])
+	  "movq  %q0, %%rsp"::"r" (&Kmm.stack[8191])
 	  );
 
   // Initialize Serial Port
@@ -67,7 +67,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   printf ("Kmm.pmm_ram_range_size %d \n", Kmm.prm_ram_range_size);
 
   // Graphical output buffer
-  gm_init(isen_os_entrypoint_data);
+  gm_init (isen_os_entrypoint_data);
 
 
 

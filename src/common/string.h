@@ -5,6 +5,6 @@
 #ifndef ISENOS_PRELOADER_STRING_H
 #define ISENOS_PRELOADER_STRING_H
 
-unsigned int strlen(const char *s);
+unsigned int strlen (const char *s);
 
 #endif //ISENOS_PRELOADER_STRING_H

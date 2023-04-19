@@ -62,7 +62,6 @@ uint16_t vmt_get_pdt_index (uint8_t filled_pdp[512][512], uint16_t pml4_index, u
 	}
 }
 
-
 void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_count,
 								uint8_t filled_pml4[512],
 								uint8_t filled_pdp[512][512])
@@ -210,16 +209,13 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
 
   uint64_t pdp_table_size = sizeof (PAGE_MAP_AND_DIRECTORY_POINTER) * 512 * pdp_table_count;
   void *pdp_table_base = pml4_table_top;
-  void *pdp_table_top = (void*) ((uint64_t)pdp_table_base + pdp_table_size);
+  void *pdp_table_top = (void *)((uint64_t)pdp_table_base + pdp_table_size);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] PDP Table size = 0x%x\n", pdp_table_size);
-
 
   uint64_t pd_table_size = sizeof (PAGE_MAP_AND_DIRECTORY_POINTER) * 512 * pd_table_count;
   void *pd_table_base = pdp_table_top;
-  void *pd_table_top =(void*) ((uint64_t)pd_table_base + pd_table_size);
+  void *pd_table_top = (void *)((uint64_t)pd_table_base + pd_table_size);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] PD Table size = 0x%x\n", pd_table_size);
-
-
 
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] pdp_table_count 	=  %016"PRIx64"  	pd_table_count 		=  %016"PRIx64"\n", pdp_table_count, pd_table_count);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] pml4_table_base 	=  %016"PRIx64"  	pml4_table_top 		=  %016"PRIx64"\n", pml4_table_base, pml4_table_top);
@@ -256,8 +252,6 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
   printf ("STATIC MEMORY MAPPINGS finished\n");
 }
 
-
-
 uint64_t vmtm_update (uint8_t identity_mapped_memory)
 {
   uint64_t pd_table_count = 0, pdp_table_count = 0;
@@ -276,8 +270,6 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
   uint8_t pages_count =
 	  allocated_size < ISENOS_PAGE_SIZE ? 1 : ceil ((float)((double)allocated_size / ISENOS_PAGE_SIZE));
 
-
-
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] pd_table_count = %d, pdp_table_count = %d, allocated_size = %d pages_count = %d\n", pd_table_count, pdp_table_count, allocated_size, pages_count);
 
   uint64_t tables_page_physical = pam_find_free_pages (pages_count);
@@ -288,15 +280,10 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] Starting CR3 update sequence \n");
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] updating CR3 with PA = %016"PRIx64 " \n", tables_page_physical);
 
-
   asm ("movq  %0, %%cr3\n"::"r"(tables_page_physical));
   bkpt ();
 
-
-
-
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] CR3 updated \n");
-
 
   return 0;
 }

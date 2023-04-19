@@ -10,7 +10,7 @@
 uint8_t inb (uint16_t _port);
 void outb (uint16_t _port, uint8_t _data);
 
-void bkpt();
+void bkpt ();
 
 #define ALIGN_PTR(ADDRESS, ALIGN)   ((uintptr_t)ADDRESS & -ALIGN)
 
@@ -19,6 +19,5 @@ void bkpt();
 
 #define ALIGN_PTR_DOWNWARD(ptr, alignment) \
     ((uintptr_t)(ptr) & ~(uintptr_t)(alignment - 1))
-
 
 #endif //ISENOS_PRELOADER_MACROS_H

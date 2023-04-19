@@ -11,11 +11,10 @@
 #define PRMRR_FLAG_USED 0x1
 
 struct PRM_RAM_RANGE {
-    uint8_t flags;
-    uint16_t index;
-    uint64_t start;
-    uint64_t end;
+	uint8_t flags;
+	uint16_t index;
+	uint64_t start;
+	uint64_t end;
 };
-
 
 #endif //ISENOS_PRELOADER_PHYSICAL_RAM_RANGE_H

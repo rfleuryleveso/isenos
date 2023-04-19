@@ -5,6 +5,6 @@
 #ifndef _GDT_H_
 #define _GDT_H_
 
-void setup_gdt();
+void setup_gdt ();
 
 #endif //_GDT_H_

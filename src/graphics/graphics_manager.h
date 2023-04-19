@@ -9,6 +9,6 @@
 
 extern IBL_FRAMEBUFFER_INFO framebuffer_info;
 
-void gm_init(IBL_ISENOS_DATA* ibl_isenos_data);
+void gm_init (IBL_ISENOS_DATA *ibl_isenos_data);
 
 #endif //_GRAPHICS_MANAGER_H_

@@ -4,4 +4,4 @@
 
 #include "kernel_memory_information.h"
 
-struct KERNEL_MEMORY_INFORMATION Kmm = {0};
+struct KERNEL_MEMORY_INFORMATION Kmm = { 0 };

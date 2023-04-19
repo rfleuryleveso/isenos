@@ -6,6 +6,6 @@
 #define _MEMORY_H_
 #include "stdint.h"
 
-void memory_zero (void* address, uint64_t size);
+void memory_zero (void *address, uint64_t size);
 
 #endif //_MEMORY_H_

@@ -14,7 +14,6 @@
 #include "../../common/memory.h"
 #include "../../common/math.h"
 
-
 /**
  * Update the virtual memory map
  * @param identity_mapped_memory
