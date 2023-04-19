@@ -7,7 +7,8 @@
 
 #include "stdint.h"
 
-uint64_t MemPhysToVirt(uint64_t physical_address);
-uint64_t MemVirtToPhys(uint64_t virtual_address);
+uint64_t mem_phys_to_virt(uint64_t physical_address);
+uint64_t mem_virt_to_phys(uint64_t virtual_address);
+void* memcpy (void* dst, void* src, uint64_t size);
 
 #endif //_MEMORY_TOOLS_H_

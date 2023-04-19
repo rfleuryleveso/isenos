@@ -4,15 +4,15 @@
 
 #include "page_allocation_manager.h"
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetBase ()
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_base ()
 {
   return Kmm.memory_setup_complete ? Kmm.pam_allocations
 								   : (void *)Kmm.pam_base;
 }
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForPhysicalAddress (uint64_t address)
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_physical_address (uint64_t address)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = PAMGetBase ();
+  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
   for (uint64_t i = 0; i < Kmm.pam_allocations_count; i++)
 	{
 	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[i];
@@ -25,9 +25,9 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForPhysicalAddress (u
   return NULL;
 }
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForVirtualAddress (uint64_t address)
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_address (uint64_t address)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = PAMGetBase ();
+  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
   for (uint64_t i = 0; i < Kmm.pam_allocations_count; i++)
 	{
 	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[i];
@@ -40,11 +40,11 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForVirtualAddress (ui
 }
 
 struct PAGE_ALLOCATION_MANAGER_ALLOCATION *
-PAMAddAllocation (uint64_t physical_address, uint64_t virtual_address, uint64_t flags)
+pam_add_allocation (uint64_t physical_address, uint64_t virtual_address, uint64_t flags)
 {
   uint64_t aligned_virtual_address = ALIGN_PTR(virtual_address, ISENOS_PAGE_SIZE);
   // Find the corresponding page structure
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = PAMGetAllocationForPhysicalAddress (physical_address);
+  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_allocation_for_physical_address (physical_address);
   if (base_allocation == NULL)
 	{
 	  printf ("[PAGE_ALLOCATION_MANAGER] ERROR ! Could not find page for physical address:  0x%x\n", physical_address);
@@ -56,9 +56,9 @@ PAMAddAllocation (uint64_t physical_address, uint64_t virtual_address, uint64_t 
   return base_allocation;
 }
 
-uint64_t PAMFindFreePages (int pages)
+uint64_t pam_find_free_pages (int pages)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = PAMGetBase ();
+  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
 
   struct PAGE_ALLOCATION_MANAGER_ALLOCATION *current_pam_allocation = NULL;
   struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_chain_first = NULL;
@@ -110,7 +110,7 @@ uint64_t PAMFindFreePages (int pages)
   return pam_chain_first == NULL ? 0 : pam_chain_first->physical_start;
 }
 
-void PAMInitFindRegion ()
+void pam_init_find_region ()
 {
   // Find a large enough free memory
   // Compute the required amount of space
@@ -170,7 +170,7 @@ void PAMInitFindRegion ()
 	  break;
 	}
 }
-void PAMInitStructure ()
+void pam_init_structure ()
 {
   // Find a large enough free memory
   // Compute the required amount of space
@@ -197,13 +197,13 @@ void PAMInitStructure ()
   Kmm.pam_allocations_count = pam_allocation_index;
 }
 
-void PAMInit ()
+void pam_init ()
 {
-  PAMInitFindRegion ();
-  PAMInitStructure ();
+  pam_init_find_region ();
+  pam_init_structure ();
 
 }
-void PAMDebugPrint ()
+void pam_debug_print ()
 {
 
   struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations

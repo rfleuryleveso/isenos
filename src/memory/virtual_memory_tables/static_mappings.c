@@ -5,13 +5,23 @@
 
 struct VMT_STATIC_MAPPING static_mappings[VMT_STATIC_MAPPING_COUNT] = { 0 };
 
-void VMTInitStaticMappings ()
+void vmt_init_static_mappings ()
 {
+  // Find the highest memory address
+  // This is required because the Physical Ram Manager ranges is not sorted
+  uint64_t highest_memory_address;
+  for (uint64_t index = 0; index < Kmm.prm_ram_range_size; index++)
+	{
+	  if (Kmm.prm_ram_ranges[Kmm.prm_ram_range_size - 1].end > highest_memory_address)
+		{
+		  highest_memory_address = Kmm.prm_ram_ranges[Kmm.prm_ram_range_size - 1].end;
+		}
+	}
+
   static_mappings[0].virtual_address = PHM_BASE;
   static_mappings[0].physical_address = 0;
-  static_mappings[0].pages = ceil (Kmm.prm_ram_ranges[Kmm.prm_ram_range_size - 1].end / ISENOS_PAGE_SIZE);
+  static_mappings[0].pages = ceil (highest_memory_address / ISENOS_PAGE_SIZE);
   static_mappings[0].enabled = 1;
 
-
-  printf ("VMTInitStaticMappings real memory mapped into kernel with %016 pages"PRIx64" \n", static_mappings[0].pages);
+  printf ("vmt_init_static_mappings real memory mapped into kernel with %016 pages"PRIx64" \n", static_mappings[0].pages);
 }

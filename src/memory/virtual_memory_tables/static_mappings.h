@@ -30,6 +30,6 @@ struct VMT_STATIC_MAPPING {
 extern struct VMT_STATIC_MAPPING static_mappings[VMT_STATIC_MAPPING_COUNT];
 
 
-void VMTInitStaticMappings();
+void vmt_init_static_mappings();
 
 #endif //_STATIC_MAPPINGS_H_

@@ -17,14 +17,14 @@
  * @param address
  * @return NULL in case of ERROR, a pointer to the struct if the allocation was found successfuly
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION* PAMGetAllocationForPhysicalAddress(uint64_t address);
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION* pam_get_allocation_for_physical_address(uint64_t address);
 
 /**
  * Return an allocation by the virtual address in memory handled by this address
  * @param address
  * @return NULL in case of ERROR, a pointer to the struct if the allocation was found successfuly
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForVirtualAddress (uint64_t address);
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_address (uint64_t address);
 
 /**
  * Add a new allocation to th
@@ -33,23 +33,23 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *PAMGetAllocationForVirtualAddress (ui
  * @param flags
  * @return
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION* PAMAddAllocation(uint64_t physical_address, uint64_t virtual_address, uint64_t flags);
+struct PAGE_ALLOCATION_MANAGER_ALLOCATION* pam_add_allocation(uint64_t physical_address, uint64_t virtual_address, uint64_t flags);
 
 /**
  * Initialize the page allocation manager, must be called early in the kernel initialization
  */
-void PAMInit();
+void pam_init();
 
 /**
  * Find contiguous pages in physical memory
  * @param pages
  * @return The physical address of the free pages
  */
-uint64_t PAMFindFreePages (int pages);
+uint64_t pam_find_free_pages (int pages);
 
 /**
  * Prints all pages to serial
  */
-void PAMDebugPrint();
+void pam_debug_print();
 
 #endif //ISENOS_PRELOADER_RAM_ALLOCATION_MANAGER_H

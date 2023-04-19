@@ -20,6 +20,6 @@
  * @param identity_mapped_memory
  * @return
  */
-uint64_t VMTMUpdate (uint8_t identity_mapped_memory);
+uint64_t vmtm_update (uint8_t identity_mapped_memory);
 
 #endif //_VIRTUAL_MEMORY_TABLES_MANAGER_H_

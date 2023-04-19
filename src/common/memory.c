@@ -3,7 +3,7 @@
 //
 
 #include "memory.h"
-void MemoryZero (void *address, uint64_t size)
+void memory_zero (void *address, uint64_t size)
 {
   for (uint8_t *current_address = address; current_address < (uint8_t *)address + size; current_address++)
 	{

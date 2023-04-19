@@ -7,6 +7,8 @@
 
 #include "stdint.h"
 
+#pragma pack(1)
+
 #define BIT(n) (1<<(n))
 
 typedef union {
@@ -87,6 +89,8 @@ typedef union {
 	} Bits;
 	uint64_t    uint64;
 } PAGE_TABLE_ENTRY;
+
+#pragma pack()
 
 #define IA32_PG_P       BIT(0)
 #define IA32_PG_RW      BIT(1)

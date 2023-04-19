@@ -12,6 +12,7 @@
 
 typedef int boolean_t;
 
+
 typedef struct _ELF_INFO {
 	// will subtract this value from the Virtual address
 	// if zero then physical address is used
