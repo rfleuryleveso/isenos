@@ -13,17 +13,15 @@
 #include "memory/virtual_memory_tables/static_mappings.h"
 #include "graphics/graphics_manager.h"
 #include "gdt/gdt.h"
+#include "idt/idt.h"
+#include "interrupts/interrupts.h"
+#include "acpi/acpi.h"
+#include "disk/disk.h"
 
 uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 {
-
-  // This is a warcrime
-  __asm__ volatile (
-	  "movq  %q0, %%rbp"::"r" (&Kmm.stack[8191])
-	  );
-  __asm__ volatile (
-	  "movq  %q0, %%rsp"::"r" (&Kmm.stack[8191])
-	  );
+  // Let's assume no IDT
+  disable_interrupts ();
 
   // Initialize Serial Port
   print_initialize_com1 ();
@@ -31,6 +29,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   // Display the Splash screen and Kmm offset
   printf (ISEN_OS_SPLASH);
   printf ("Initializing ISENOS: Kmm = %016"PRIx64"\n");
+  printf ("EFI_TABLE = %016"PRIx64"\n", isen_os_entrypoint_data->EfiTablePointer);
 
   // Compute all usable ram, and add all entries to the Physical Ram Manager
   long long total_usable_ram = 0;
@@ -38,15 +37,22 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	{
 	  IBL_MEMORY_MAP_ENTRY map_entry = isen_os_entrypoint_data->MemoryMap[index];
 	  printf ("    Entry %3d | TYPE = %x (", index, map_entry.Type);
+
+	  struct PRM_RAM_RANGE *range;
+
 	  switch (map_entry.Type)
 		{
 	  case EfiConventionalMemory:
 		printf ("Free RAM            ");
 		  total_usable_ram += map_entry.Size;
-		  prm_add_range (map_entry.PhysicalStart, map_entry.PhysicalStart + map_entry.Size);
+		  range = prm_add_range (map_entry.PhysicalStart, map_entry.PhysicalStart + map_entry.Size);
 		  break;
 	  case EfiACPIReclaimMemory:
 		printf ("ACPI Tables         ");
+		  range = prm_add_range (map_entry.PhysicalStart, map_entry.PhysicalStart + map_entry.Size);
+		  range->flags |= PRMRR_FLAG_UNUSABLE | PRMRR_FLAG_ACPI;
+		  Kmm.acpi_base = map_entry.PhysicalStart;
+		  Kmm.acpi_top = map_entry.PhysicalStart + map_entry.Size;
 		  break;
 	  case EfiMemoryMappedIO:
 		printf ("EfiMemoryMappedIO   ");
@@ -98,8 +104,10 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   // Init the Page Allocation Unit
   pam_init ();
 
-  // Setup GDT
-  setup_gdt();
+  // Setup GDT (Segment descriptors table)
+  setup_gdt ();
+
+  setup_interrupts ();
 
   // Identity map the old VMT
   // This is used to make sure we don't overwrite the VMT
@@ -116,10 +124,13 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	for (int index = 0; index < required_pages; index++)
 	  {
 
-		pam_add_allocation (
+		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
 			Kmm.virtual_memory_map_base + (ISENOS_PAGE_SIZE * index),
 			Kmm.virtual_memory_map_base + (ISENOS_PAGE_SIZE * index),
 			PAMA_FLAG_VMT | PAMA_FLAG_KERNEL | PAMA_FLAG_PRESENT);
+
+		// This should be free'd once the new CR3 VMT has been set
+		allocation->references_count = 0;
 	  }
   }
 
@@ -132,9 +143,10 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 		KERNEL_MEMORY_MAPPING kernel_memory_mapping = isen_os_entrypoint_data->KernelMemoryMappings[index];
 		for (int page = 0; page < kernel_memory_mapping.PAGES; page++)
 		  {
-			pam_add_allocation (
+			struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
 				kernel_memory_mapping.PhysicalBase + (ISENOS_PAGE_SIZE * page),
 				kernel_memory_mapping.VirtualBase + (ISENOS_PAGE_SIZE * page), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
+			allocation->references_count++;
 		  }
 
 	  }
@@ -150,11 +162,31 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	// We map the kernel pages
 	for (int index = 0; index < required_pages; index++)
 	  {
-		pam_add_allocation (
+		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
 			Kmm.pam_base + (ISENOS_PAGE_SIZE * index),
 			PAM_BASE + (ISENOS_PAGE_SIZE * index), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
+		allocation->references_count++;
 	  }
   }
+
+  uint64_t stack_physical_address_base;
+  uint64_t stack_virtual_address_top = ISENOS_KERNEL_STACK_TOP;
+  // One page for the stack
+  {
+	stack_physical_address_base = pam_find_free_pages (1);
+	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+		stack_physical_address_base,
+		ISENOS_KERNEL_STACK_BASE,
+		PAMA_FLAG_KERNEL | PAMA_FLAG_PRESENT);
+
+	allocation->references_count++;
+  }
+  printf ("[NEW_STACK] PHYSICAL_BASE = %016"PRIx64 " PHYSICAL_TOP = %016"PRIx64" VIRTUAL_BASE = %016"PRIx64 " VIRTUAL_TOP = %016"PRIx64 " \n",
+		  stack_physical_address_base,
+		  stack_physical_address_base + ISENOS_PAGE_SIZE,
+		  ISENOS_KERNEL_STACK_BASE,
+		  ISENOS_KERNEL_STACK_TOP
+  );
 
   // Init the static memory mappings
   vmt_init_static_mappings ();
@@ -163,9 +195,39 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   pam_debug_print ();
 
   // Generate VirtualMemory tables (to be stored in CR3)
-  vmtm_update (0);
+  uint64_t tables_page_physical = vmtm_update (0);
 
-  bkpt ();
+  // Tell the CPU where to find the new pages
+  asm ("movq  %0, %%cr3\n"::"r"(tables_page_physical));
+
+  // Move the stack because we are at the top of the main
+  __asm__ volatile (
+	  "movq  %q0, %%rbp"::"r" (ISENOS_KERNEL_STACK_TOP - 0x10)
+	  );
+  __asm__ volatile (
+	  "movq  %q0, %%rsp"::"r" (ISENOS_KERNEL_STACK_TOP - 0x10)
+	  );
+
+  printf ("Looking for ACPI table");
+
+  uint64_t uefi_rsdp = acpi_find_rsdp (ACPI_BASE, ACPI_TOP);
+
+  printf ("Kernel finished initialization");
+
+  init_disks ();
+
+  // Re-enable interrupts
+  enable_interrupts ();
+
+  while (0 == 0)
+	{
+	  uint8_t keyboard_status = inb (0x64);
+	  if (keyboard_status & 1)
+		{
+		  uint8_t keyboard = inb (0x60);
+		  printf ("Received keyboard stroke = %d \n", keyboard);
+		}
+	}
 
   return 0;
 }

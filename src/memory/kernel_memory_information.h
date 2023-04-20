@@ -14,7 +14,7 @@
 // Kernel memory information structure
 struct KERNEL_MEMORY_INFORMATION {
 	// lmao, this is beyond hell. This CAN'T go well
-	uint8_t stack[8192];
+	uint8_t stack[16384];
 
 	// Total available memory in the system
 	uint64_t available_memory;
@@ -44,6 +44,8 @@ struct KERNEL_MEMORY_INFORMATION {
 	// True, if memory setup has been completed for kernel and all memory is available correctly
 	uint8_t memory_setup_complete;
 
+	uint64_t acpi_base;
+	uint64_t acpi_top;
 };
 
 extern struct KERNEL_MEMORY_INFORMATION Kmm;

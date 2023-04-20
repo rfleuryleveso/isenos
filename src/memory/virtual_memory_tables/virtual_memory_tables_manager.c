@@ -6,6 +6,27 @@
 #include "static_mappings.h"
 #include "../memory_tools.h"
 
+uint8_t bitmap_get_bit (uint64_t *bitmap, uint64_t index)
+{
+  uint8_t bitmap_index = (index & ~0x3F) >> 6;
+  uint8_t bitmap_shift = index & 0x3F;
+  return (bitmap[bitmap_index] >> bitmap_shift) & 0x1;
+}
+
+void bitmap_set_bit (uint64_t *bitmap, uint64_t index, uint8_t value)
+{
+  uint8_t bitmap_index = (index & ~0x3F) >> 6;
+  uint8_t bitmap_shift = index & 0x3F;
+  if (value == 0)
+	{
+	  bitmap[bitmap_index] &= ~((uint64_t)1 << bitmap_shift);
+	}
+  else
+	{
+	  bitmap[bitmap_index] |= (uint64_t)1 << bitmap_shift;
+	}
+}
+
 void vmt_va_2_indexes (uint64_t virtual_address, uint64_t *pml4index, uint64_t *pdptindex, uint64_t *pdindex)
 {
   *pml4index = virtual_address >> PAGING_L4_ADDRESS_SHIFT & PAGING_PAE_INDEX_MASK;
@@ -19,18 +40,18 @@ void vmt_va_2_indexes (uint64_t virtual_address, uint64_t *pml4index, uint64_t *
  * @param pml4_index
  * @return
  */
-uint16_t pdpt_index (uint8_t filled_pml4[512], uint16_t pml4_index)
+uint16_t vmt_get_pdpt_index (uint64_t *filled_pml4, uint16_t pml4_index)
 {
   int index = 0;
   for (int i = 0; i < 512; i++)
 	{
 	  if (pml4_index == i)
 		{
-		  return index * 512;
+		  return index;
 		}
 	  else
 		{
-		  if (filled_pml4[i])
+		  if (bitmap_get_bit (filled_pml4, i))
 			{
 			  index++;
 			}
@@ -43,28 +64,34 @@ uint16_t pdpt_index (uint8_t filled_pml4[512], uint16_t pml4_index)
  * @param pml4_index
  * @return
  */
-uint16_t vmt_get_pdt_index (uint8_t filled_pdp[512][512], uint16_t pml4_index, uint16_t pdp_index)
+uint16_t vmt_get_pdt_index (uint64_t *filled_pml4, uint64_t *filled_pdp, uint16_t pml4_index, uint16_t pdp_index)
 {
   int index = 0;
+
+  // Each PML4 entry gives 512 PDP tables
   for (int i = 0; i < 512; i++)
 	{
-	  for (int j = 0; j < 512; j++)
+	  if (bitmap_get_bit (filled_pml4, i))
 		{
-		  if (pml4_index == i && pdp_index == j)
+		  // Each PDP entry gives 512 PD, only if the the PDP entry is filled
+		  for (int j = 0; j < 512; j++)
 			{
-			  return index * 512;
-			}
-		  else if (filled_pdp[pml4_index][pdp_index])
-			{
-			  index++;
+			  if (pml4_index == i && pdp_index == j)
+				{
+				  return index;
+				}
+			  else if (bitmap_get_bit (filled_pdp, i * 512 + j))
+				{
+				  index++;
+				}
 			}
 		}
 	}
 }
 
 void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_count,
-								uint8_t filled_pml4[512],
-								uint8_t filled_pdp[512][512])
+								uint64_t *filled_pml4,
+								uint64_t *filled_pdp)
 {
   // Find all virtual adresses in use
   struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
@@ -74,7 +101,7 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] Computing table counts for %d allocations @ 0x%x\n", Kmm.pam_allocations_count, base_allocation);
 
 
-  // For each pam entry, set up the corresponding PML4 entry
+  // For each pam idt_entries, set up the corresponding PML4 idt_entries
   for (int pam_allocation_index = 0; pam_allocation_index < Kmm.pam_allocations_count; pam_allocation_index++)
 	{
 	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[pam_allocation_index];
@@ -83,8 +110,8 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
 		  uint64_t virtual_address = allocation->virtual_start;
 		  uint64_t va_pml4_index, va_pdpt_index, va_pd_index;
 		  vmt_va_2_indexes (virtual_address, &va_pml4_index, &va_pdpt_index, &va_pd_index);
-		  filled_pml4[va_pml4_index] = 1;
-		  filled_pdp[va_pml4_index][va_pdpt_index] = 1;
+		  bitmap_set_bit (filled_pml4, va_pml4_index, 1);
+		  bitmap_set_bit (filled_pdp, va_pml4_index * 512 + va_pdpt_index, 1);
 		}
 	}
 
@@ -92,6 +119,8 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
   for (int static_mapping_index = 0; static_mapping_index < VMT_STATIC_MAPPING_COUNT; static_mapping_index++)
 	{
 	  struct VMT_STATIC_MAPPING mapping = static_mappings[static_mapping_index];
+	  printf ("MAPPING %d PHYSICAL_ADDRESS = %016"PRIx64" VIRTUAL_ADDRESS = %016"PRIx64" PAGES = %d ENABLED = %d\n", static_mapping_index, mapping.physical_address, mapping.virtual_address, mapping.pages, mapping.enabled);
+
 	  if (mapping.enabled)
 		{
 		  for (int static_mapping_page = 0; static_mapping_page < mapping.pages; static_mapping_page++)
@@ -100,8 +129,8 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
 			  uint64_t virtual_address = mapping.virtual_address + ISENOS_PAGE_SIZE * static_mapping_page;
 			  uint64_t va_pml4_index, va_pdpt_index, va_pd_index;
 			  vmt_va_2_indexes (virtual_address, &va_pml4_index, &va_pdpt_index, &va_pd_index);
-			  filled_pml4[va_pml4_index] = 1;
-			  filled_pdp[va_pml4_index][va_pdpt_index] = 1;
+			  bitmap_set_bit (filled_pml4, va_pml4_index, 1);
+			  bitmap_set_bit (filled_pdp, va_pml4_index * 512 + va_pdpt_index, 1);
 
 			}
 		}
@@ -111,17 +140,18 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
   // Compute
   for (int pml4index = 0; pml4index < 512; pml4index++)
 	{
-	  if (filled_pml4[pml4index])
+	  if (bitmap_get_bit (filled_pml4, pml4index))
 		{
 		  (*pdp_table_count)++;
-		}
-	  for (int pdptindex = 0; pdptindex < 512; pdptindex++)
-		{
-		  if (filled_pdp[pml4index][pdptindex])
+		  for (int pdptindex = 0; pdptindex < 512; pdptindex++)
 			{
-			  (*pd_table_count)++;
+			  if (bitmap_get_bit (filled_pdp, pml4index * 512 + pdptindex))
+				{
+				  (*pd_table_count)++;
+				}
 			}
 		}
+
 	}
 }
 
@@ -161,12 +191,12 @@ void vmt_populate_page_table_for_address (
   PAGE_MAP_AND_DIRECTORY_POINTER *pml4_table = pml4_table_base;
   PAGE_MAP_AND_DIRECTORY_POINTER *pml4_entry = &pml4_table[va_pml4_index];
 
-  uint64_t pdp_table_index = pdpt_index (filled_pml4, va_pml4_index);
-  uint64_t pd_table_index = vmt_get_pdt_index (filled_pdp, va_pml4_index, va_pdp_index);
+  uint64_t pdp_table_index = vmt_get_pdpt_index (filled_pml4, va_pml4_index) * 512;
+  uint64_t pd_table_index = vmt_get_pdt_index (filled_pml4, filled_pdp, va_pml4_index, va_pdp_index) * 512;
 
   uint64_t pdp_index = pdp_table_index + va_pdp_index;
   uint64_t pd_index = pd_table_index + va_pd_index;
-  // printf ("VA = %016"PRIx64" PA = %016"PRIx64" PML4[%d] PDP[%d + %d = %d] PD[%d + %d = %d]\n", virtual_address, physical_address, va_pml4_index, pdp_table_index, va_pdp_index, pdp_index, pd_table_index, va_pd_index, pd_index);
+  printf ("VA = %016"PRIx64" PA = %016"PRIx64" PML4[%d] PDP[%d + %d = %d] PD[%d + %d = %d]\n", virtual_address, physical_address, va_pml4_index, pdp_table_index, va_pdp_index, pdp_index, pd_table_index, va_pd_index, pd_index);
 
   PAGE_MAP_AND_DIRECTORY_POINTER *pdp_table = pdp_table_base;
   PAGE_MAP_AND_DIRECTORY_POINTER *pdp_entry = &pdp_table[pdp_index];
@@ -190,11 +220,11 @@ void vmt_populate_page_table_for_address (
   pd_entry->Bits.ReadWrite = 1;
   pd_entry->Bits.UserSupervisor = 1;
   pd_entry->Bits.MustBe1 = 1;
-  // printf (">	 PML4(%016"PRIx64") = %016"PRIx64"  PDP(%016"PRIx64") = %016"PRIx64"  PD(%016"PRIx64") = %016"PRIx64"\n", pml4_entry, *pml4_entry, pdp_entry, *pdp_entry, pd_entry, *pd_entry);
+  printf (">	 PML4(%016"PRIx64") = %016"PRIx64"  PDP(%016"PRIx64") = %016"PRIx64"  PD(%016"PRIx64") = %016"PRIx64"\n", pml4_entry, *pml4_entry, pdp_entry, *pdp_entry, pd_entry, *pd_entry);
 }
 
-void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_table_count, uint8_t filled_pml4[512],
-							  uint8_t filled_pdp[512][512], int64_t offset)
+void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_table_count, uint64_t *filled_pml4,
+							  uint64_t *filled_pdp, int64_t offset)
 {
 
 
@@ -223,7 +253,7 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] pd_table_base 	=  %016"PRIx64"  	pd_table_top 		=  %016"PRIx64"\n", pd_table_base, pd_table_top);
 
 
-  // For each pam entry, set up the corresponding PML4 entry
+  // For each pam idt_entries, set up the corresponding PML4 idt_entries
   for (int pam_allocation_index = 0; pam_allocation_index < Kmm.pam_allocations_count; pam_allocation_index++)
 	{
 	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[pam_allocation_index];
@@ -239,6 +269,7 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
   for (int static_mapping_index = 0; static_mapping_index < VMT_STATIC_MAPPING_COUNT; static_mapping_index++)
 	{
 	  struct VMT_STATIC_MAPPING mapping = static_mappings[static_mapping_index];
+	  printf ("MAPPING %d PHYSICAL_ADDRESS = %016"PRIx64" VIRTUAL_ADDRESS = %016"PRIx64" PAGES = %d ENABLED = %d\n", static_mapping_index, mapping.physical_address, mapping.virtual_address, mapping.pages, mapping.enabled);
 	  if (mapping.enabled)
 		{
 		  for (int static_mapping_page = 0; static_mapping_page < mapping.pages; static_mapping_page++)
@@ -254,11 +285,24 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
 
 uint64_t vmtm_update (uint8_t identity_mapped_memory)
 {
+  uint64_t bitmaps_heap = pam_find_free_pages (1);
+  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *bitmap_heap_allocation = pam_add_allocation (
+	  bitmaps_heap,
+	  VMT_BITMAP_BASE, PAMA_FLAG_PRESENT | PAMA_FLAG_VMT);
+  bitmap_heap_allocation->references_count = 1;
+
   uint64_t pd_table_count = 0, pdp_table_count = 0;
-  uint8_t filled_pml4[512];
-  uint8_t filled_pdp[512][512];
-  memory_zero ((void *)filled_pdp, 512 * 512);
-  memory_zero ((void *)filled_pml4, 512);
+
+  // We need 512 bits
+  // (512)/64 = 8 entries
+  uint64_t *filled_pml4 = (uint64_t *)bitmaps_heap; // 8 * sizeof(uint64_t) bytes
+
+  // We need 512 * 512 bits
+  // (512*512)/64 = 64 entries = 8*8 entries
+  uint64_t *filled_pdp = filled_pml4 + 8 * 8; // 8 * 8 * sizeof(uint64_t) bytes
+
+  memset ((void *)filled_pdp, 8 * 8 * sizeof (uint64_t), 0);
+  memset ((void *)filled_pml4, 8 * sizeof (uint64_t), 0);
 
   vmt_compute_tables_counts (&pd_table_count, &pdp_table_count, filled_pml4, filled_pdp);
 
@@ -274,26 +318,40 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
 
   // Find enough pages for the VMT
   uint64_t tables_page_physical = pam_find_free_pages (pages_count);
-  for(int page_index; page_index < pages_count; page_index++) {
-	  pam_add_allocation (
+
+  if (tables_page_physical == 0)
+	{
+	  printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] Could not find enough pages pages_count = %d\n", pages_count);
+
+	  return 0;
+	}
+
+  for (int page_index; page_index < pages_count; page_index++)
+	{
+	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *table_page_allocation = pam_add_allocation (
 		  tables_page_physical + (ISENOS_PAGE_SIZE * page_index),
 		  VMT_BASE + (ISENOS_PAGE_SIZE * page_index), PAMA_FLAG_PRESENT | PAMA_FLAG_VMT);
-  }
+
+	  table_page_allocation->references_count = 1;
+	}
+
+
 
   // Find the virtual address of the table
   uint64_t tables_page_virtual = mem_phys_to_virt (tables_page_physical);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] identity_mapped_memory = %d, tables_page_physical = %016"PRIx64 " tables_page_virtual = %016"PRIx64 " \n", identity_mapped_memory, tables_page_physical, tables_page_virtual);
 
+  memset((void*)tables_page_physical, allocated_size, 0);
+
   // Fill the tables
   vmt_populate_page_table ((void *)tables_page_physical, pdp_table_count, pd_table_count, filled_pml4, filled_pdp, 0);
-  printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] Starting CR3 update sequence \n");
-  printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] updating CR3 with PA = %016"PRIx64 " \n", tables_page_physical);
+  printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] VMT = %016"PRIx64 " \n", tables_page_physical);
 
-  // Tell the CPU where to find the new pages
-  asm ("movq  %0, %%cr3\n"::"r"(tables_page_physical));
-  bkpt ();
 
-  printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] CR3 updated \n");
 
-  return 0;
+
+
+  bitmap_heap_allocation->references_count = 0;
+
+  return tables_page_physical;
 }

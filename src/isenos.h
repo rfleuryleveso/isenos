@@ -19,10 +19,10 @@ typedef struct _ELF_INFO {
 	uint64_t PhysicalBase;
 	uint64_t PhysicalTop;
 
-	// The entry of the image
+	// The idt_entries of the image
 	uint64_t Entry;
 
-	// section entry info
+	// section idt_entries info
 	void *SectionHeaders;
 	uint64_t SectionHeadersSize;
 	uint64_t SectionEntrySize;
@@ -74,6 +74,8 @@ typedef struct _IBL_ISENOSDATA {
 	uint64_t KernelEnd;
 
 	KERNEL_MEMORY_MAPPING KernelMemoryMappings[32]; // Memory mappings of the kernel
+
+	uint64_t EfiTablePointer;
 } IBL_ISENOS_DATA;
 
 static char ISEN_OS_SPLASH[] = { 0x0A, 0x0A, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20,

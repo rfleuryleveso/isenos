@@ -7,6 +7,8 @@
 
 #include "stdint.h"
 
+#define PRMRR_FLAG_ACPI 0x8
+#define PRMRR_FLAG_UNUSABLE 0x4
 #define PRMRR_FLAG_KERNEL 0x2
 #define PRMRR_FLAG_USED 0x1
 

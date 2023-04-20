@@ -10,7 +10,7 @@
 #include <stdarg.h>
 #include "isenos.h"
 #include "stdint.h"
-#include "macros/macros.h"
+#include "common/ports.h"
 #include "common/string.h"
 
 #define isdigit(d) ((d) >= '0' && (d) <= '9')

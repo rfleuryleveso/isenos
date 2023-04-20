@@ -13,7 +13,7 @@
 #include "stdint.h"
 #include "inttypes.h"
 
-#define VMT_STATIC_MAPPING_COUNT 1
+#define VMT_STATIC_MAPPING_COUNT 2
 
 #define VMT_STATIC_MAPPING_FLAGS_PHYS 0x1
 

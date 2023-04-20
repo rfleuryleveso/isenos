@@ -19,7 +19,7 @@ Namely:
 - Starting address
 - Ending address
 
-The first entry of the RAManager is self referencing, meaning that this allocates RAM for the entry
+The first idt_entries of the RAManager is self referencing, meaning that this allocates RAM for the idt_entries
 
 ## Virtual Memory
 Kernel will have to update Virtual Memory, it's deduced from PRM and RAManager

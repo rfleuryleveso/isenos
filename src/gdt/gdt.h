@@ -35,19 +35,19 @@
 #define SEG_CODE_EXRDCA    0x0F // Execute/Read, conforming, accessed
 
 #define GDT_CODE_PL0 SEG_DESCTYPE(1) | SEG_PRES(1) | SEG_SAVL(0) | \
-                     SEG_LONG(0)     | SEG_SIZE(1) | SEG_GRAN(1) | \
+                     SEG_LONG(1)     | SEG_SIZE(0) | SEG_GRAN(0) | \
                      SEG_PRIV(0)     | SEG_CODE_EXRD
 
 #define GDT_DATA_PL0 SEG_DESCTYPE(1) | SEG_PRES(1) | SEG_SAVL(0) | \
-                     SEG_LONG(0)     | SEG_SIZE(1) | SEG_GRAN(1) | \
+                     SEG_LONG(1)     | SEG_SIZE(0) | SEG_GRAN(0) | \
                      SEG_PRIV(0)     | SEG_DATA_RDWR
 
 #define GDT_CODE_PL3 SEG_DESCTYPE(1) | SEG_PRES(1) | SEG_SAVL(0) | \
-                     SEG_LONG(0)     | SEG_SIZE(1) | SEG_GRAN(1) | \
+                     SEG_LONG(0)     | SEG_SIZE(0) | SEG_GRAN(1) | \
                      SEG_PRIV(3)     | SEG_CODE_EXRD
 
 #define GDT_DATA_PL3 SEG_DESCTYPE(1) | SEG_PRES(1) | SEG_SAVL(0) | \
-                     SEG_LONG(0)     | SEG_SIZE(1) | SEG_GRAN(1) | \
+                     SEG_LONG(0)     | SEG_SIZE(0) | SEG_GRAN(1) | \
                      SEG_PRIV(3)     | SEG_DATA_RDWR
 
 /**
@@ -61,6 +61,7 @@ struct gdt_ptr
 
 #pragma pack ()
 
+extern void flush_gdt();
 
 extern uint64_t gdt_table[5];
 extern struct gdt_ptr gdt_table_ptr;

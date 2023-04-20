@@ -10,5 +10,5 @@
 uint64_t mem_phys_to_virt (uint64_t physical_address);
 uint64_t mem_virt_to_phys (uint64_t virtual_address);
 void *memcpy (void *dst, void *src, uint64_t size);
-
+void memset (void *address, uint64_t size, uint64_t value);
 #endif //_MEMORY_TOOLS_H_

@@ -9,7 +9,7 @@
 #include "../kernel_memory_information.h"
 #include "../../print.h"
 #include "../../common/os-config.h"
-#include "../../macros/macros.h"
+#include "../../common/ports.h"
 #include "inttypes.h"
 
 /**

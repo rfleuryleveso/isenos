@@ -23,5 +23,10 @@ void vmt_init_static_mappings ()
   static_mappings[0].pages = ceil (highest_memory_address / ISENOS_PAGE_SIZE);
   static_mappings[0].enabled = 1;
 
-  printf ("vmt_init_static_mappings real memory mapped into kernel with %016 pages"PRIx64" \n", static_mappings[0].pages);
+  static_mappings[1].virtual_address = ACPI_BASE;
+  static_mappings[1].physical_address = Kmm.acpi_base;
+  static_mappings[1].pages = 1;
+  static_mappings[1].enabled = 1;
+
+  printf ("vmt_init_static_mappings real memory mapped into kernel with %016"PRIx64" pages \n", static_mappings[0].pages);
 }
