@@ -18,4 +18,7 @@ typedef struct memory_allocation_t {
   uint64_t flags;
 };
 
+
+void malloc(uint64_t size);
+
 #endif //_MEMORY_ALLOCATION_H_

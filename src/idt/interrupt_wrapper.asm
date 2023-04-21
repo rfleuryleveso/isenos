@@ -1,6 +1,5 @@
 BITS 64
 extern interrupt_handler
-
 global      isr_handler_0
 global      isr_handler_1
 global      isr_handler_2
@@ -257,7 +256,263 @@ global      isr_handler_252
 global      isr_handler_253
 global      isr_handler_254
 global      isr_handler_255
-isr_wrapper:
+extern      interrupt_handler_0
+extern      interrupt_handler_1
+extern      interrupt_handler_2
+extern      interrupt_handler_3
+extern      interrupt_handler_4
+extern      interrupt_handler_5
+extern      interrupt_handler_6
+extern      interrupt_handler_7
+extern      interrupt_handler_8
+extern      interrupt_handler_9
+extern      interrupt_handler_10
+extern      interrupt_handler_11
+extern      interrupt_handler_12
+extern      interrupt_handler_13
+extern      interrupt_handler_14
+extern      interrupt_handler_15
+extern      interrupt_handler_16
+extern      interrupt_handler_17
+extern      interrupt_handler_18
+extern      interrupt_handler_19
+extern      interrupt_handler_20
+extern      interrupt_handler_21
+extern      interrupt_handler_22
+extern      interrupt_handler_23
+extern      interrupt_handler_24
+extern      interrupt_handler_25
+extern      interrupt_handler_26
+extern      interrupt_handler_27
+extern      interrupt_handler_28
+extern      interrupt_handler_29
+extern      interrupt_handler_30
+extern      interrupt_handler_31
+extern      interrupt_handler_32
+extern      interrupt_handler_33
+extern      interrupt_handler_34
+extern      interrupt_handler_35
+extern      interrupt_handler_36
+extern      interrupt_handler_37
+extern      interrupt_handler_38
+extern      interrupt_handler_39
+extern      interrupt_handler_40
+extern      interrupt_handler_41
+extern      interrupt_handler_42
+extern      interrupt_handler_43
+extern      interrupt_handler_44
+extern      interrupt_handler_45
+extern      interrupt_handler_46
+extern      interrupt_handler_47
+extern      interrupt_handler_48
+extern      interrupt_handler_49
+extern      interrupt_handler_50
+extern      interrupt_handler_51
+extern      interrupt_handler_52
+extern      interrupt_handler_53
+extern      interrupt_handler_54
+extern      interrupt_handler_55
+extern      interrupt_handler_56
+extern      interrupt_handler_57
+extern      interrupt_handler_58
+extern      interrupt_handler_59
+extern      interrupt_handler_60
+extern      interrupt_handler_61
+extern      interrupt_handler_62
+extern      interrupt_handler_63
+extern      interrupt_handler_64
+extern      interrupt_handler_65
+extern      interrupt_handler_66
+extern      interrupt_handler_67
+extern      interrupt_handler_68
+extern      interrupt_handler_69
+extern      interrupt_handler_70
+extern      interrupt_handler_71
+extern      interrupt_handler_72
+extern      interrupt_handler_73
+extern      interrupt_handler_74
+extern      interrupt_handler_75
+extern      interrupt_handler_76
+extern      interrupt_handler_77
+extern      interrupt_handler_78
+extern      interrupt_handler_79
+extern      interrupt_handler_80
+extern      interrupt_handler_81
+extern      interrupt_handler_82
+extern      interrupt_handler_83
+extern      interrupt_handler_84
+extern      interrupt_handler_85
+extern      interrupt_handler_86
+extern      interrupt_handler_87
+extern      interrupt_handler_88
+extern      interrupt_handler_89
+extern      interrupt_handler_90
+extern      interrupt_handler_91
+extern      interrupt_handler_92
+extern      interrupt_handler_93
+extern      interrupt_handler_94
+extern      interrupt_handler_95
+extern      interrupt_handler_96
+extern      interrupt_handler_97
+extern      interrupt_handler_98
+extern      interrupt_handler_99
+extern      interrupt_handler_100
+extern      interrupt_handler_101
+extern      interrupt_handler_102
+extern      interrupt_handler_103
+extern      interrupt_handler_104
+extern      interrupt_handler_105
+extern      interrupt_handler_106
+extern      interrupt_handler_107
+extern      interrupt_handler_108
+extern      interrupt_handler_109
+extern      interrupt_handler_110
+extern      interrupt_handler_111
+extern      interrupt_handler_112
+extern      interrupt_handler_113
+extern      interrupt_handler_114
+extern      interrupt_handler_115
+extern      interrupt_handler_116
+extern      interrupt_handler_117
+extern      interrupt_handler_118
+extern      interrupt_handler_119
+extern      interrupt_handler_120
+extern      interrupt_handler_121
+extern      interrupt_handler_122
+extern      interrupt_handler_123
+extern      interrupt_handler_124
+extern      interrupt_handler_125
+extern      interrupt_handler_126
+extern      interrupt_handler_127
+extern      interrupt_handler_128
+extern      interrupt_handler_129
+extern      interrupt_handler_130
+extern      interrupt_handler_131
+extern      interrupt_handler_132
+extern      interrupt_handler_133
+extern      interrupt_handler_134
+extern      interrupt_handler_135
+extern      interrupt_handler_136
+extern      interrupt_handler_137
+extern      interrupt_handler_138
+extern      interrupt_handler_139
+extern      interrupt_handler_140
+extern      interrupt_handler_141
+extern      interrupt_handler_142
+extern      interrupt_handler_143
+extern      interrupt_handler_144
+extern      interrupt_handler_145
+extern      interrupt_handler_146
+extern      interrupt_handler_147
+extern      interrupt_handler_148
+extern      interrupt_handler_149
+extern      interrupt_handler_150
+extern      interrupt_handler_151
+extern      interrupt_handler_152
+extern      interrupt_handler_153
+extern      interrupt_handler_154
+extern      interrupt_handler_155
+extern      interrupt_handler_156
+extern      interrupt_handler_157
+extern      interrupt_handler_158
+extern      interrupt_handler_159
+extern      interrupt_handler_160
+extern      interrupt_handler_161
+extern      interrupt_handler_162
+extern      interrupt_handler_163
+extern      interrupt_handler_164
+extern      interrupt_handler_165
+extern      interrupt_handler_166
+extern      interrupt_handler_167
+extern      interrupt_handler_168
+extern      interrupt_handler_169
+extern      interrupt_handler_170
+extern      interrupt_handler_171
+extern      interrupt_handler_172
+extern      interrupt_handler_173
+extern      interrupt_handler_174
+extern      interrupt_handler_175
+extern      interrupt_handler_176
+extern      interrupt_handler_177
+extern      interrupt_handler_178
+extern      interrupt_handler_179
+extern      interrupt_handler_180
+extern      interrupt_handler_181
+extern      interrupt_handler_182
+extern      interrupt_handler_183
+extern      interrupt_handler_184
+extern      interrupt_handler_185
+extern      interrupt_handler_186
+extern      interrupt_handler_187
+extern      interrupt_handler_188
+extern      interrupt_handler_189
+extern      interrupt_handler_190
+extern      interrupt_handler_191
+extern      interrupt_handler_192
+extern      interrupt_handler_193
+extern      interrupt_handler_194
+extern      interrupt_handler_195
+extern      interrupt_handler_196
+extern      interrupt_handler_197
+extern      interrupt_handler_198
+extern      interrupt_handler_199
+extern      interrupt_handler_200
+extern      interrupt_handler_201
+extern      interrupt_handler_202
+extern      interrupt_handler_203
+extern      interrupt_handler_204
+extern      interrupt_handler_205
+extern      interrupt_handler_206
+extern      interrupt_handler_207
+extern      interrupt_handler_208
+extern      interrupt_handler_209
+extern      interrupt_handler_210
+extern      interrupt_handler_211
+extern      interrupt_handler_212
+extern      interrupt_handler_213
+extern      interrupt_handler_214
+extern      interrupt_handler_215
+extern      interrupt_handler_216
+extern      interrupt_handler_217
+extern      interrupt_handler_218
+extern      interrupt_handler_219
+extern      interrupt_handler_220
+extern      interrupt_handler_221
+extern      interrupt_handler_222
+extern      interrupt_handler_223
+extern      interrupt_handler_224
+extern      interrupt_handler_225
+extern      interrupt_handler_226
+extern      interrupt_handler_227
+extern      interrupt_handler_228
+extern      interrupt_handler_229
+extern      interrupt_handler_230
+extern      interrupt_handler_231
+extern      interrupt_handler_232
+extern      interrupt_handler_233
+extern      interrupt_handler_234
+extern      interrupt_handler_235
+extern      interrupt_handler_236
+extern      interrupt_handler_237
+extern      interrupt_handler_238
+extern      interrupt_handler_239
+extern      interrupt_handler_240
+extern      interrupt_handler_241
+extern      interrupt_handler_242
+extern      interrupt_handler_243
+extern      interrupt_handler_244
+extern      interrupt_handler_245
+extern      interrupt_handler_246
+extern      interrupt_handler_247
+extern      interrupt_handler_248
+extern      interrupt_handler_249
+extern      interrupt_handler_250
+extern      interrupt_handler_251
+extern      interrupt_handler_252
+extern      interrupt_handler_253
+extern      interrupt_handler_254
+extern      interrupt_handler_255
+isr_handler_0:
     cli
     push rax      ;save current rax
     push rbx      ;save current rbx
@@ -276,7 +531,7 @@ isr_wrapper:
     push r15      ;save current r15
     pushfq
     cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
-    call interrupt_handler
+    call interrupt_handler_0
     popfq
     pop r15         ;restore current r15
     pop r14         ;restore current r14
@@ -295,1538 +550,9949 @@ isr_wrapper:
     pop rax         ;restore current rax
     sti
     iretq
-isr_handler_0:
-    cli
-    push byte 0
-    push byte 0
-    jmp isr_wrapper
 
 isr_handler_1:
     cli
-    push byte 0
-    push byte 1
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_1
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_2:
     cli
-    push byte 0
-    push byte 2
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_2
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_3:
     cli
-    push byte 0
-    push byte 3
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_3
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_4:
     cli
-    push byte 0
-    push byte 4
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_4
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_5:
     cli
-    push byte 0
-    push byte 5
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_5
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_6:
     cli
-    push byte 0
-    push byte 6
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_6
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_7:
     cli
-    push byte 0
-    push byte 7
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_7
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_8:
     cli
-    push byte 0
-    push byte 8
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_8
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_9:
     cli
-    push byte 0
-    push byte 9
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_9
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_10:
     cli
-    push byte 0
-    push byte 10
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_10
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_11:
     cli
-    push byte 0
-    push byte 11
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_11
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_12:
     cli
-    push byte 0
-    push byte 12
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_12
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_13:
     cli
-    push byte 0
-    push byte 13
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_13
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_14:
     cli
-    push byte 0
-    push byte 14
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_14
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_15:
     cli
-    push byte 0
-    push byte 15
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_15
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_16:
     cli
-    push byte 0
-    push byte 16
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_16
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_17:
     cli
-    push byte 0
-    push byte 17
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_17
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_18:
     cli
-    push byte 0
-    push byte 18
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_18
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_19:
     cli
-    push byte 0
-    push byte 19
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_19
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_20:
     cli
-    push byte 0
-    push byte 20
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_20
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_21:
     cli
-    push byte 0
-    push byte 21
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_21
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_22:
     cli
-    push byte 0
-    push byte 22
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_22
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_23:
     cli
-    push byte 0
-    push byte 23
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_23
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_24:
     cli
-    push byte 0
-    push byte 24
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_24
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_25:
     cli
-    push byte 0
-    push byte 25
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_25
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_26:
     cli
-    push byte 0
-    push byte 26
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_26
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_27:
     cli
-    push byte 0
-    push byte 27
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_27
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_28:
     cli
-    push byte 0
-    push byte 28
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_28
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_29:
     cli
-    push byte 0
-    push byte 29
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_29
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_30:
     cli
-    push byte 0
-    push byte 30
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_30
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_31:
     cli
-    push byte 0
-    push byte 31
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_31
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_32:
     cli
-    push byte 0
-    push byte 32
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_32
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_33:
     cli
-    push byte 0
-    push byte 33
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_33
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_34:
     cli
-    push byte 0
-    push byte 34
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_34
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_35:
     cli
-    push byte 0
-    push byte 35
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_35
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_36:
     cli
-    push byte 0
-    push byte 36
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_36
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_37:
     cli
-    push byte 0
-    push byte 37
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_37
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_38:
     cli
-    push byte 0
-    push byte 38
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_38
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_39:
     cli
-    push byte 0
-    push byte 39
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_39
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_40:
     cli
-    push byte 0
-    push byte 40
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_40
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_41:
     cli
-    push byte 0
-    push byte 41
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_41
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_42:
     cli
-    push byte 0
-    push byte 42
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_42
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_43:
     cli
-    push byte 0
-    push byte 43
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_43
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_44:
     cli
-    push byte 0
-    push byte 44
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_44
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_45:
     cli
-    push byte 0
-    push byte 45
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_45
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_46:
     cli
-    push byte 0
-    push byte 46
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_46
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_47:
     cli
-    push byte 0
-    push byte 47
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_47
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_48:
     cli
-    push byte 0
-    push byte 48
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_48
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_49:
     cli
-    push byte 0
-    push byte 49
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_49
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_50:
     cli
-    push byte 0
-    push byte 50
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_50
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_51:
     cli
-    push byte 0
-    push byte 51
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_51
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_52:
     cli
-    push byte 0
-    push byte 52
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_52
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_53:
     cli
-    push byte 0
-    push byte 53
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_53
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_54:
     cli
-    push byte 0
-    push byte 54
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_54
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_55:
     cli
-    push byte 0
-    push byte 55
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_55
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_56:
     cli
-    push byte 0
-    push byte 56
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_56
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_57:
     cli
-    push byte 0
-    push byte 57
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_57
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_58:
     cli
-    push byte 0
-    push byte 58
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_58
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_59:
     cli
-    push byte 0
-    push byte 59
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_59
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_60:
     cli
-    push byte 0
-    push byte 60
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_60
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_61:
     cli
-    push byte 0
-    push byte 61
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_61
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_62:
     cli
-    push byte 0
-    push byte 62
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_62
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_63:
     cli
-    push byte 0
-    push byte 63
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_63
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_64:
     cli
-    push byte 0
-    push byte 64
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_64
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_65:
     cli
-    push byte 0
-    push byte 65
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_65
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_66:
     cli
-    push byte 0
-    push byte 66
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_66
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_67:
     cli
-    push byte 0
-    push byte 67
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_67
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_68:
     cli
-    push byte 0
-    push byte 68
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_68
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_69:
     cli
-    push byte 0
-    push byte 69
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_69
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_70:
     cli
-    push byte 0
-    push byte 70
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_70
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_71:
     cli
-    push byte 0
-    push byte 71
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_71
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_72:
     cli
-    push byte 0
-    push byte 72
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_72
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_73:
     cli
-    push byte 0
-    push byte 73
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_73
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_74:
     cli
-    push byte 0
-    push byte 74
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_74
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_75:
     cli
-    push byte 0
-    push byte 75
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_75
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_76:
     cli
-    push byte 0
-    push byte 76
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_76
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_77:
     cli
-    push byte 0
-    push byte 77
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_77
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_78:
     cli
-    push byte 0
-    push byte 78
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_78
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_79:
     cli
-    push byte 0
-    push byte 79
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_79
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_80:
     cli
-    push byte 0
-    push byte 80
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_80
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_81:
     cli
-    push byte 0
-    push byte 81
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_81
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_82:
     cli
-    push byte 0
-    push byte 82
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_82
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_83:
     cli
-    push byte 0
-    push byte 83
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_83
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_84:
     cli
-    push byte 0
-    push byte 84
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_84
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_85:
     cli
-    push byte 0
-    push byte 85
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_85
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_86:
     cli
-    push byte 0
-    push byte 86
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_86
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_87:
     cli
-    push byte 0
-    push byte 87
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_87
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_88:
     cli
-    push byte 0
-    push byte 88
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_88
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_89:
     cli
-    push byte 0
-    push byte 89
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_89
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_90:
     cli
-    push byte 0
-    push byte 90
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_90
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_91:
     cli
-    push byte 0
-    push byte 91
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_91
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_92:
     cli
-    push byte 0
-    push byte 92
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_92
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_93:
     cli
-    push byte 0
-    push byte 93
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_93
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_94:
     cli
-    push byte 0
-    push byte 94
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_94
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_95:
     cli
-    push byte 0
-    push byte 95
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_95
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_96:
     cli
-    push byte 0
-    push byte 96
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_96
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_97:
     cli
-    push byte 0
-    push byte 97
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_97
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_98:
     cli
-    push byte 0
-    push byte 98
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_98
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_99:
     cli
-    push byte 0
-    push byte 99
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_99
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_100:
     cli
-    push byte 0
-    push byte 100
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_100
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_101:
     cli
-    push byte 0
-    push byte 101
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_101
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_102:
     cli
-    push byte 0
-    push byte 102
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_102
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_103:
     cli
-    push byte 0
-    push byte 103
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_103
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_104:
     cli
-    push byte 0
-    push byte 104
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_104
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_105:
     cli
-    push byte 0
-    push byte 105
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_105
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_106:
     cli
-    push byte 0
-    push byte 106
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_106
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_107:
     cli
-    push byte 0
-    push byte 107
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_107
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_108:
     cli
-    push byte 0
-    push byte 108
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_108
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_109:
     cli
-    push byte 0
-    push byte 109
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_109
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_110:
     cli
-    push byte 0
-    push byte 110
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_110
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_111:
     cli
-    push byte 0
-    push byte 111
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_111
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_112:
     cli
-    push byte 0
-    push byte 112
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_112
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_113:
     cli
-    push byte 0
-    push byte 113
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_113
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_114:
     cli
-    push byte 0
-    push byte 114
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_114
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_115:
     cli
-    push byte 0
-    push byte 115
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_115
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_116:
     cli
-    push byte 0
-    push byte 116
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_116
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_117:
     cli
-    push byte 0
-    push byte 117
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_117
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_118:
     cli
-    push byte 0
-    push byte 118
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_118
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_119:
     cli
-    push byte 0
-    push byte 119
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_119
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_120:
     cli
-    push byte 0
-    push byte 120
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_120
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_121:
     cli
-    push byte 0
-    push byte 121
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_121
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_122:
     cli
-    push byte 0
-    push byte 122
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_122
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_123:
     cli
-    push byte 0
-    push byte 123
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_123
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_124:
     cli
-    push byte 0
-    push byte 124
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_124
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_125:
     cli
-    push byte 0
-    push byte 125
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_125
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_126:
     cli
-    push byte 0
-    push byte 126
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_126
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_127:
     cli
-    push byte 0
-    push byte 127
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_127
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_128:
     cli
-    push byte 0
-    push byte 128
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_128
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_129:
     cli
-    push byte 0
-    push byte 129
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_129
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_130:
     cli
-    push byte 0
-    push byte 130
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_130
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_131:
     cli
-    push byte 0
-    push byte 131
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_131
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_132:
     cli
-    push byte 0
-    push byte 132
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_132
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_133:
     cli
-    push byte 0
-    push byte 133
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_133
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_134:
     cli
-    push byte 0
-    push byte 134
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_134
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_135:
     cli
-    push byte 0
-    push byte 135
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_135
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_136:
     cli
-    push byte 0
-    push byte 136
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_136
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_137:
     cli
-    push byte 0
-    push byte 137
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_137
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_138:
     cli
-    push byte 0
-    push byte 138
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_138
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_139:
     cli
-    push byte 0
-    push byte 139
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_139
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_140:
     cli
-    push byte 0
-    push byte 140
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_140
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_141:
     cli
-    push byte 0
-    push byte 141
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_141
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_142:
     cli
-    push byte 0
-    push byte 142
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_142
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_143:
     cli
-    push byte 0
-    push byte 143
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_143
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_144:
     cli
-    push byte 0
-    push byte 144
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_144
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_145:
     cli
-    push byte 0
-    push byte 145
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_145
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_146:
     cli
-    push byte 0
-    push byte 146
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_146
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_147:
     cli
-    push byte 0
-    push byte 147
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_147
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_148:
     cli
-    push byte 0
-    push byte 148
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_148
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_149:
     cli
-    push byte 0
-    push byte 149
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_149
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_150:
     cli
-    push byte 0
-    push byte 150
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_150
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_151:
     cli
-    push byte 0
-    push byte 151
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_151
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_152:
     cli
-    push byte 0
-    push byte 152
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_152
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_153:
     cli
-    push byte 0
-    push byte 153
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_153
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_154:
     cli
-    push byte 0
-    push byte 154
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_154
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_155:
     cli
-    push byte 0
-    push byte 155
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_155
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_156:
     cli
-    push byte 0
-    push byte 156
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_156
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_157:
     cli
-    push byte 0
-    push byte 157
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_157
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_158:
     cli
-    push byte 0
-    push byte 158
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_158
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_159:
     cli
-    push byte 0
-    push byte 159
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_159
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_160:
     cli
-    push byte 0
-    push byte 160
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_160
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_161:
     cli
-    push byte 0
-    push byte 161
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_161
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_162:
     cli
-    push byte 0
-    push byte 162
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_162
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_163:
     cli
-    push byte 0
-    push byte 163
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_163
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_164:
     cli
-    push byte 0
-    push byte 164
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_164
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_165:
     cli
-    push byte 0
-    push byte 165
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_165
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_166:
     cli
-    push byte 0
-    push byte 166
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_166
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_167:
     cli
-    push byte 0
-    push byte 167
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_167
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_168:
     cli
-    push byte 0
-    push byte 168
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_168
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_169:
     cli
-    push byte 0
-    push byte 169
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_169
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_170:
     cli
-    push byte 0
-    push byte 170
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_170
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_171:
     cli
-    push byte 0
-    push byte 171
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_171
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_172:
     cli
-    push byte 0
-    push byte 172
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_172
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_173:
     cli
-    push byte 0
-    push byte 173
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_173
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_174:
     cli
-    push byte 0
-    push byte 174
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_174
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_175:
     cli
-    push byte 0
-    push byte 175
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_175
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_176:
     cli
-    push byte 0
-    push byte 176
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_176
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_177:
     cli
-    push byte 0
-    push byte 177
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_177
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_178:
     cli
-    push byte 0
-    push byte 178
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_178
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_179:
     cli
-    push byte 0
-    push byte 179
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_179
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_180:
     cli
-    push byte 0
-    push byte 180
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_180
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_181:
     cli
-    push byte 0
-    push byte 181
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_181
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_182:
     cli
-    push byte 0
-    push byte 182
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_182
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_183:
     cli
-    push byte 0
-    push byte 183
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_183
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_184:
     cli
-    push byte 0
-    push byte 184
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_184
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_185:
     cli
-    push byte 0
-    push byte 185
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_185
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_186:
     cli
-    push byte 0
-    push byte 186
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_186
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_187:
     cli
-    push byte 0
-    push byte 187
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_187
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_188:
     cli
-    push byte 0
-    push byte 188
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_188
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_189:
     cli
-    push byte 0
-    push byte 189
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_189
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_190:
     cli
-    push byte 0
-    push byte 190
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_190
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_191:
     cli
-    push byte 0
-    push byte 191
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_191
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_192:
     cli
-    push byte 0
-    push byte 192
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_192
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_193:
     cli
-    push byte 0
-    push byte 193
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_193
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_194:
     cli
-    push byte 0
-    push byte 194
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_194
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_195:
     cli
-    push byte 0
-    push byte 195
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_195
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_196:
     cli
-    push byte 0
-    push byte 196
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_196
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_197:
     cli
-    push byte 0
-    push byte 197
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_197
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_198:
     cli
-    push byte 0
-    push byte 198
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_198
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_199:
     cli
-    push byte 0
-    push byte 199
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_199
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_200:
     cli
-    push byte 0
-    push byte 200
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_200
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_201:
     cli
-    push byte 0
-    push byte 201
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_201
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_202:
     cli
-    push byte 0
-    push byte 202
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_202
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_203:
     cli
-    push byte 0
-    push byte 203
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_203
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_204:
     cli
-    push byte 0
-    push byte 204
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_204
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_205:
     cli
-    push byte 0
-    push byte 205
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_205
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_206:
     cli
-    push byte 0
-    push byte 206
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_206
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_207:
     cli
-    push byte 0
-    push byte 207
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_207
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_208:
     cli
-    push byte 0
-    push byte 208
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_208
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_209:
     cli
-    push byte 0
-    push byte 209
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_209
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_210:
     cli
-    push byte 0
-    push byte 210
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_210
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_211:
     cli
-    push byte 0
-    push byte 211
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_211
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_212:
     cli
-    push byte 0
-    push byte 212
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_212
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_213:
     cli
-    push byte 0
-    push byte 213
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_213
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_214:
     cli
-    push byte 0
-    push byte 214
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_214
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_215:
     cli
-    push byte 0
-    push byte 215
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_215
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_216:
     cli
-    push byte 0
-    push byte 216
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_216
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_217:
     cli
-    push byte 0
-    push byte 217
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_217
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_218:
     cli
-    push byte 0
-    push byte 218
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_218
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_219:
     cli
-    push byte 0
-    push byte 219
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_219
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_220:
     cli
-    push byte 0
-    push byte 220
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_220
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_221:
     cli
-    push byte 0
-    push byte 221
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_221
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_222:
     cli
-    push byte 0
-    push byte 222
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_222
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_223:
     cli
-    push byte 0
-    push byte 223
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_223
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_224:
     cli
-    push byte 0
-    push byte 224
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_224
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_225:
     cli
-    push byte 0
-    push byte 225
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_225
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_226:
     cli
-    push byte 0
-    push byte 226
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_226
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_227:
     cli
-    push byte 0
-    push byte 227
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_227
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_228:
     cli
-    push byte 0
-    push byte 228
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_228
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_229:
     cli
-    push byte 0
-    push byte 229
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_229
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_230:
     cli
-    push byte 0
-    push byte 230
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_230
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_231:
     cli
-    push byte 0
-    push byte 231
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_231
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_232:
     cli
-    push byte 0
-    push byte 232
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_232
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_233:
     cli
-    push byte 0
-    push byte 233
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_233
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_234:
     cli
-    push byte 0
-    push byte 234
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_234
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_235:
     cli
-    push byte 0
-    push byte 235
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_235
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_236:
     cli
-    push byte 0
-    push byte 236
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_236
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_237:
     cli
-    push byte 0
-    push byte 237
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_237
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_238:
     cli
-    push byte 0
-    push byte 238
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_238
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_239:
     cli
-    push byte 0
-    push byte 239
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_239
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_240:
     cli
-    push byte 0
-    push byte 240
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_240
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_241:
     cli
-    push byte 0
-    push byte 241
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_241
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_242:
     cli
-    push byte 0
-    push byte 242
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_242
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_243:
     cli
-    push byte 0
-    push byte 243
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_243
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_244:
     cli
-    push byte 0
-    push byte 244
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_244
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_245:
     cli
-    push byte 0
-    push byte 245
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_245
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_246:
     cli
-    push byte 0
-    push byte 246
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_246
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_247:
     cli
-    push byte 0
-    push byte 247
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_247
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_248:
     cli
-    push byte 0
-    push byte 248
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_248
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_249:
     cli
-    push byte 0
-    push byte 249
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_249
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_250:
     cli
-    push byte 0
-    push byte 250
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_250
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_251:
     cli
-    push byte 0
-    push byte 251
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_251
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_252:
     cli
-    push byte 0
-    push byte 252
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_252
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_253:
     cli
-    push byte 0
-    push byte 253
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_253
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_254:
     cli
-    push byte 0
-    push byte 254
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_254
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
 
 isr_handler_255:
     cli
-    push byte 0
-    push byte 255
-    jmp isr_wrapper
+    push rax      ;save current rax
+    push rbx      ;save current rbx
+    push rcx      ;save current rcx
+    push rdx      ;save current rdx
+    push rbp      ;save current rbp
+    push rdi      ;save current rdi
+    push rsi      ;save current rsi
+    push r8         ;save current r8
+    push r9         ;save current r9
+    push r10      ;save current r10
+    push r11      ;save current r11
+    push r12      ;save current r12
+    push r13      ;save current r13
+    push r14      ;save current r14
+    push r15      ;save current r15
+    pushfq
+    cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
+    call interrupt_handler_255
+    popfq
+    pop r15         ;restore current r15
+    pop r14         ;restore current r14
+    pop r13         ;restore current r13
+    pop r12         ;restore current r12
+    pop r11         ;restore current r11
+    pop r10         ;restore current r10
+    pop r9         ;restore current r9
+    pop r8         ;restore current r8
+    pop rsi         ;restore current rsi
+    pop rdi         ;restore current rdi
+    pop rbp         ;restore current rbp
+    pop rdx         ;restore current rdx
+    pop rcx         ;restore current rcx
+    pop rbx         ;restore current rbx
+    pop rax         ;restore current rax
+    sti
+    iretq
+

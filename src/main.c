@@ -17,6 +17,8 @@
 #include "interrupts/interrupts.h"
 #include "acpi/acpi.h"
 #include "disk/disk.h"
+#include "graphics/text_output_manager.h"
+#include "pit/pit.h"
 
 uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 {
@@ -30,6 +32,8 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   printf (ISEN_OS_SPLASH);
   printf ("Initializing ISENOS: Kmm = %016"PRIx64"\n");
   printf ("EFI_TABLE = %016"PRIx64"\n", isen_os_entrypoint_data->EfiTablePointer);
+
+  text_output_manager_add_string("Loading ISENOS !\0");
 
   // Compute all usable ram, and add all entries to the Physical Ram Manager
   long long total_usable_ram = 0;
@@ -100,7 +104,16 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
 	  }
   }
+  {
+	printf ("Adding frame buffer to Physical Ram Manager\n");
+	printf ("> %d PHYSICAL_BASE = %016"PRIx64" PHYSICAL_TOP = %016"PRIx64"\n", isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase,
+			isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase
+			+ isen_os_entrypoint_data->FrameBufferInfo->FrameBufferSize);
+	struct PRM_RAM_RANGE *kernel_ram_range = prm_add_range (isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase,
+															isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase
+															+ isen_os_entrypoint_data->FrameBufferInfo->FrameBufferSize);
 
+  }
   // Init the Page Allocation Unit
   pam_init ();
 
@@ -168,6 +181,32 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 		allocation->references_count++;
 	  }
   }
+  // Page allocation for graphics
+  {
+	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *framebuffer_allocation = pam_get_allocation_for_physical_address (isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase);
+	uint64_t graphics_physical_base = isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase;
+	uint64_t graphics_physical_top = isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase
+									 + isen_os_entrypoint_data->FrameBufferInfo->FrameBufferSize;
+
+	uint64_t aligment_offset = isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase
+							   - ALIGN_PTR_DOWNWARD(isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase, ISENOS_PAGE_SIZE);
+	int required_pages = ceil ((float)(graphics_physical_top / (double)ISENOS_PAGE_SIZE));
+	printf ("Memory allocation for graphics @ %016"PRIx64 " offset = %016"PRIx64" with %d pages \n", isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase, aligment_offset, required_pages);
+
+	for (int index = 0; index < required_pages; index++)
+	  {
+		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+			isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase + (ISENOS_PAGE_SIZE * index),
+			GRAPHICS_BUFFER_BASE + (ISENOS_PAGE_SIZE * index), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
+		allocation->references_count++;
+
+		// Quick and dirty fetch the virtual base
+		if (index == 0)
+		  {
+			framebuffer_info.FrameBufferBase = allocation->virtual_start + aligment_offset;
+		  }
+	  }
+  }
 
   uint64_t stack_physical_address_base;
   uint64_t stack_virtual_address_top = ISENOS_KERNEL_STACK_TOP;
@@ -218,15 +257,21 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
   // Re-enable interrupts
   enable_interrupts ();
+  text_output_manager_clear();
+  text_output_manager_add_string ("Welcome to ISENOS v1.1\0");
+  text_output_manager_new_line();
+  text_output_manager_add_string ("ring0@isen-os: \0");
+  int counter = 0;
+
+  init_pit(1000);
 
   while (0 == 0)
 	{
-	  uint8_t keyboard_status = inb (0x64);
-	  if (keyboard_status & 1)
-		{
-		  uint8_t keyboard = inb (0x60);
-		  printf ("Received keyboard stroke = %d \n", keyboard);
-		}
+	  if(counter > 256) {
+		gm_clear();
+		counter = 0;
+	  }
+	  gm_render ();
 	}
 
   return 0;

@@ -1,12 +1,15 @@
+import math
 f = open("out/interrupt_wrapper.asm", "w")
 
 f.write('''BITS 64
 extern interrupt_handler\n''')
 for x in range(256):
     f.write('''global      isr_handler_%d\n''' % (x))
+for x in range(256):
+    f.write('''extern      interrupt_handler_%d\n''' % (x))
 
-f.write(
-    '''isr_wrapper:
+for x in range(256):
+    f.write('''isr_handler_%d:
     cli
     push rax      ;save current rax
     push rbx      ;save current rbx
@@ -25,7 +28,7 @@ f.write(
     push r15      ;save current r15
     pushfq
     cld    ; C code following the sysV ABI requires DF to be clear on function idt_entries
-    call interrupt_handler
+    call interrupt_handler_%d
     popfq
     pop r15         ;restore current r15
     pop r14         ;restore current r14
@@ -43,15 +46,8 @@ f.write(
     pop rbx         ;restore current rbx
     pop rax         ;restore current rax
     sti
-    iretq'''
-)
-
-for x in range(256):
-    f.write('''isr_handler_%d:
-    cli
-    push byte 0
-    push byte %d
-    jmp isr_wrapper\n''' % (x,x))
+    iretq
+    \n''' % (x, x))
 
 f = open("out/idt.h", "w")
 
@@ -84,9 +80,13 @@ typedef struct {
 for x in range(256):
     f.write('''extern void isr_handler_%d(void);\n''' % (x))
 
+for x in range(256):
+    f.write(''' void __attribute__((optimize("O0"))) interrupt_handler_%d ();\n''' % (x))
+
 f.write('''
 __attribute__((aligned(0x10)))
 extern idt_entry_t idt_entries[256];
+extern volatile uint64_t last_called_isr;
 
 void init_idt();
 
@@ -105,6 +105,7 @@ f.write('''//
 
 __attribute__((aligned(0x10)))
 idt_entry_t idt_entries[256];
+volatile uint64_t last_called_isr = 0;
 
 idt_ptr_t idt_ptr;
 
@@ -116,22 +117,6 @@ struct regs {
 	uint64_t eip, cs, eflags, useresp, ss;   /* pushed by the processor automatically */
 };
 
-void __attribute__((optimize("O0"))) interrupt_handler (struct regs r)
-{
-  printf (">>>>>>>> INTERRUPT ! \\n");
-  outb (0x20, 0x20);
-  outb (0xa0, 0x20);
-}
-
-void __attribute__((optimize("O0"))) interrupt_handler_kbd (struct regs r)
-{
-  printf (">>>>>>>> INTERRUPT KBD ! \\n");
-  int scancode = inb (0x60);
-  printf ("Scan code: %02X\\n", scancode); // print scan code in hex format
-
-  outb (0x20, 0x20);
-  outb (0xa0, 0x20);
-}
 
 #pragma GCC pop_options
 
@@ -157,11 +142,12 @@ void register_idt_entry(uint8_t index, uint8_t type_attr, uint64_t handler) {
 // Function to initialize the IDT
 void init_idt ()
 {
+  last_called_isr = 0;
   memset (&idt_entries[0], sizeof (idt_entries), 0);
 ''')
 
 for x in range(256):
-    f.write('''   register_idt_entry(%d, 0x8F, (uint64_t )&isr_handler_%d);\n''' % (x, x))
+    f.write('''   register_idt_entry(%d, 0x8E, (uint64_t )&isr_handler_%d);\n''' % (x, x))
 f.write('''// Load the IDT
   idt_ptr.base = (uint64_t)&idt_entries;
   // idt_ptr.size = sizeof(idt_entries) - 1;
@@ -177,3 +163,18 @@ f.write('''// Load the IDT
   printf ("INTERRUPT TABLE UPDATED !! \\n");
 
 }''')
+
+for x in range(256):
+    f.write(''' void __attribute__((optimize("O0"))) interrupt_handler_%d ()
+{
+  printf (">>>>>>>> INTERRUPT %d ! \\n");
+  outb (0x20, %d);
+  outb (0xa0, %d);
+}\n''' % (x, x, x, x))
+
+
+f = open("out/gdb_commands.txt", "w")
+for x in range(256):
+    f.write('''break interrupt_handler_%d\n''' % (x))
+f.write('''break main
+continue''')

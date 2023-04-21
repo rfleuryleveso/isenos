@@ -3,3 +3,9 @@
 //
 
 #include "memory_allocation.h"
+
+
+void malloc (uint64_t size)
+{
+
+}

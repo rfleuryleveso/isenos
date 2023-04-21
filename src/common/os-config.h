@@ -21,7 +21,10 @@
 #define VMT_BASE (PAM_BASE + 0x40000000)
 #define VMT_TOP (VMT_BASE + 0x40000000)
 
-#define ACPI_BASE (VMT_TOP)
+#define GRAPHICS_BUFFER_BASE (VMT_TOP)
+#define GRAPHICS_BUFFER_TOP (GRAPHICS_BUFFER_BASE + 0x200000)
+
+#define ACPI_BASE (GRAPHICS_BUFFER_TOP)
 #define ACPI_TOP (ACPI_BASE + 0x200000)
 
 // Map physical memory to virtual memory
@@ -30,6 +33,5 @@
 
 #define VMT_BITMAP_BASE (PHM_TOP)
 
-#define NULL 0
 
 #endif //ISENOS_PRELOADER_OS_CONFIG_H

@@ -11,7 +11,7 @@
 #include "isenos.h"
 #include "stdint.h"
 #include "common/ports.h"
-#include "common/string.h"
+#include "common/strings.h"
 
 #define isdigit(d) ((d) >= '0' && (d) <= '9')
 #define Ctod(c) ((c) - '0')

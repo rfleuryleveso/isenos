@@ -14,6 +14,7 @@ void pic_sendendofeoi(unsigned char irq)
   outb(PIC1_CMD,PIC_EOI);
 }
 
+
 void interrupts_pic_init ()
 {
   // ICW1: start initialization, ICW4 needed
@@ -32,7 +33,7 @@ void interrupts_pic_init ()
   outb(PIC2_DATA, ICW4_8086);
 
   // OCW1: Disable all IRQs
-  outb(PIC1_DATA, ~0x2);  // 11111100
+  outb(PIC1_DATA, ~(0x2|0x1));  // 11111100
   outb(PIC2_DATA, ~0x0);  // 11111111
 
 }

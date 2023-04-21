@@ -414,7 +414,7 @@ _doprnt (
 		if (sign_char)
 		  length--;
 		if (prefix)
-		  length -= strlen ((const char *)prefix);
+		  length -= str_len ((const char *)prefix);
 
 		if (padc == ' ' && !ladjust)
 		  {

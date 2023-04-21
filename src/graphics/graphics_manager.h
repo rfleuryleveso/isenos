@@ -7,8 +7,16 @@
 
 #include "../isenos.h"
 
+
+typedef struct graphics_manager_runtime_config_t {
+	uint32_t text_color;
+};
+
+extern struct graphics_manager_runtime_config_t gm_runtime_config;
+
 extern IBL_FRAMEBUFFER_INFO framebuffer_info;
 
 void gm_init (IBL_ISENOS_DATA *ibl_isenos_data);
-
+void gm_clear();
+void gm_render();
 #endif //_GRAPHICS_MANAGER_H_

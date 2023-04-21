@@ -7,6 +7,7 @@
 
 #include "stdint.h"
 
+#define PAMA_FLAG_HEAP 0x40
 #define PAMA_FLAG_DO_NOT_INCLUDE_IN_VMT 0x20
 #define PAMA_FLAG_RAMANAGER 0x10
 #define PAMA_FLAG_VMT 0x8
