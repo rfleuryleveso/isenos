@@ -49,7 +49,7 @@ void register_idt_entry (uint8_t index, uint8_t type_attr, uint64_t handler)
 void init_idt ()
 {
   last_called_isr = 0;
-  memset (&idt_entries[0], sizeof (idt_entries), 0);
+  memset (&idt_entries[0], 0, sizeof (idt_entries));
   register_idt_entry (0, 0x8E, (uint64_t)&isr_handler_0);
   register_idt_entry (1, 0x8E, (uint64_t)&isr_handler_1);
   register_idt_entry (2, 0x8E, (uint64_t)&isr_handler_2);
@@ -527,6 +527,7 @@ void __attribute__((optimize("O0"))) interrupt_handler_33 ()
 
   uint8_t scan_code = inb (0x60);
   console_manager_keyboard_callback(scan_code);
+  scheduler_handle_scancode(scan_code);
 
 }
 void __attribute__((optimize("O0"))) interrupt_handler_34 ()

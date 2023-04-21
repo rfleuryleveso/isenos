@@ -4,6 +4,7 @@
 
 #include "donut.h"
 #include "../graphics/graphics_manager.h"
+#include "../scheduler/scheduler.h"
 
 const float theta_spacing = 0.07;
 const float phi_spacing = 0.02;
@@ -19,7 +20,6 @@ const float K2 = 5;
 // screen_width*K2*3/(8*(R1+R2)) = K1
 const float K1 = TOM_COLUMNS * K2 * 3 / (8 * (R1 + R2));
 
-
 void render_frame (float A, float B)
 {
   // precompute sines and cosines of A and B
@@ -27,9 +27,9 @@ void render_frame (float A, float B)
   float cosB = cos (B), sinB = sin (B);
 
   char output[TOM_COLUMNS][TOM_ROWS];
-  memset (output, TOM_ROWS * TOM_COLUMNS, ' ');
+  memset (output, ' ', TOM_ROWS * TOM_COLUMNS);
   float zbuffer[TOM_COLUMNS][TOM_ROWS];
-  memset (output, TOM_ROWS * TOM_COLUMNS * sizeof (float), 0);
+  memset (output, 0, TOM_ROWS * TOM_COLUMNS * sizeof (float));
 
   // theta goes around the cross-sectional circle of a torus
   for (float theta = 0; theta < 2 * M_PI; theta += theta_spacing)
@@ -96,7 +96,7 @@ void render_frame (float A, float B)
 	}
 
 }
-_Noreturn void donut ()
+void donut ()
 {
   float A = 0, B = 0;
   while (true)
@@ -104,8 +104,17 @@ _Noreturn void donut ()
 	  render_frame (A, B);
 	  A += 0.04;
 	  B += 0.02;
-	  gm_render();
+	  gm_render ();
 	  wait_ms (100);
-	  gm_clear();
+	  gm_clear ();
+
+	  if (scheduler_program_should_stop ())
+		{
+		  text_output_manager_clear();
+		  text_output_manager_add_string ("Welcome to ISENOS v1.1\0");
+		  text_output_manager_new_line ();
+		  text_output_manager_add_string ("ring0@isen-os: \0");
+		  return;
+		}
 	}
 }

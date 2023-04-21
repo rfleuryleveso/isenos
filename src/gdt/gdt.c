@@ -33,7 +33,7 @@ create_descriptor(uint16_t index, uint32_t base, uint32_t limit, uint16_t flag)
 
 void setup_gdt ()
 {
-  memset(&gdt_table[0], sizeof(gdt_table), 0);
+  memset(&gdt_table[0], 0, sizeof(gdt_table));
 
   create_descriptor(0, 0, 0, 0);
   create_descriptor(1, 0, 0x000FFFFF, (GDT_CODE_PL0));

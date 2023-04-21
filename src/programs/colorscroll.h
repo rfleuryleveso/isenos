@@ -5,6 +5,6 @@
 #ifndef _COLORSCROLL_H_
 #define _COLORSCROLL_H_
 
-_Noreturn void color_scroll();
+void color_scroll ();
 
 #endif //_COLORSCROLL_H_

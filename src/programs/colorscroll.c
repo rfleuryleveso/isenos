@@ -5,8 +5,9 @@
 #include "colorscroll.h"
 #include "../pit/pit.h"
 #include "../graphics/graphics_manager.h"
+#include "../scheduler/scheduler.h"
 
-_Noreturn void color_scroll ()
+ void color_scroll ()
 {
 
   //
@@ -29,6 +30,10 @@ _Noreturn void color_scroll ()
 			  uint32_t b = yPercent *  0xFF;
 			  gm_draw_pixel32bpp (x, y, (r << 16) + (g << 8) + b);
 			}
+		}
+	  if(scheduler_program_should_stop()) {
+		  gm_clear();
+		  return;
 		}
 	}
 }

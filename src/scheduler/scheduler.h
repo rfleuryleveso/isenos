@@ -8,9 +8,15 @@
 #include "stdint.h"
 #include "../memory/page_allocation/page_allocation_manager_allocation.h"
 
-#define PROGRAM_STATUS_RUNNING (1 << 1)
-#define PROGRAM_STATUS_KERNEL (1 << 2)
-#define PROGRAM_STATUS_STOPPING (1 << 3)
+#define PROGRAM_DESCRIPTORS_COUNT 32
+
+#define PROGRAM_STATUS_ALLOCATED (1 << 1)
+#define PROGRAM_STATUS_RUNNING (1 << 2)
+#define PROGRAM_STATUS_KERNEL (1 << 3)
+#define PROGRAM_STATUS_STOPPING (1 << 4)
+
+#define SCHEDULER_KBD_FLAGS_CTRL_PRESSED (1 << 1)
+#define SCHEDULER_KBD_FLAGS_C_PRESSED (1 << 1)
 
 typedef enum {
 	ISENOS_PROGRAMS_NONE,
@@ -18,6 +24,7 @@ typedef enum {
 	ISENOS_PROGRAMS_SYSINFO,
 	ISENOS_PROGRAMS_SCROLL,
 	ISENOS_PROGRAMS_DONUT,
+	ISENOS_PROGRAMS_MATRIX,
 	ISENOS_PROGRAMS_DOOM // :(
 } isenos_programs_e;
 
@@ -52,7 +59,9 @@ typedef struct {
 
 typedef struct {
 	scheduler_program_descriptor_t* current_program;
-	scheduler_program_descriptor_t program_descriptors[32];
+	scheduler_program_descriptor_t program_descriptors[PROGRAM_DESCRIPTORS_COUNT];
+
+	uint8_t keyboard_flags;
 } scheduler_t;
 
 extern scheduler_t kernel_scheduler;
@@ -66,5 +75,7 @@ scheduler_program_descriptor_t* scheduler_start_program(isenos_programs_e progra
 uint8_t scheduler_program_should_stop();
 
 void scheduler_tick();
+
+void scheduler_handle_scancode(uint64_t scancode);
 
 #endif //_SCHEDULER_H_

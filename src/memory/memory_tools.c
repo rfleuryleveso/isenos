@@ -30,7 +30,7 @@ void *memcpy (void *dst, void *src, uint64_t size)
 	}
   return dst;
 }
-void memset (void *address, uint64_t size, uint64_t value)
+void memset (void *address,  uint64_t value, uint64_t size)
 {
   for (uint8_t *current_address = address; current_address < (uint8_t *)address + size; current_address++)
 	{

@@ -5,6 +5,7 @@
 #include "console_manager.h"
 #include "../print.h"
 #include "../graphics/text_output_manager.h"
+#include "../graphics/graphics_manager.h"
 
 volatile char console_manager_current_line[256];
 volatile uint8_t console_manager_current_line_length;
@@ -84,6 +85,19 @@ void console_manager_keyboard_callback (uint8_t scan_code)
 		  console_manager.next_program = ISENOS_PROGRAMS_DONUT;
 		  text_output_manager_add_string ("Starting donut..");
 		}
+	  else if (str_cmp (console_manager_current_line, "hacker") == 0)
+		{
+		  console_manager.next_program = ISENOS_PROGRAMS_MATRIX;
+		  gm_runtime_config.text_color = 0x00FF00;
+		  gm_runtime_config.background_color = 0x000000;
+		  text_output_manager_add_string ("Entering the matrix");
+		}
+	  else if (str_cmp (console_manager_current_line, "flashbang") == 0)
+		{
+		  gm_runtime_config.text_color = 0x00FF00;
+		  gm_runtime_config.background_color = 0xFFFFFF;
+		  text_output_manager_add_string ("Beware of the eyes ;)");
+		}
 	  else
 		{
 		  console_manager.next_program = ISENOS_PROGRAMS_NONE;
@@ -111,12 +125,13 @@ isenos_programs_e console_manager_get_next_program ()
 	  console_manager.next_program = ISENOS_PROGRAMS_NONE;
 	  return next_program;
 	}
+
   return ISENOS_PROGRAMS_NONE;
 }
 void console_manager_reset_input()
 {
   console_manager_current_line_length = 0;
-  memset (console_manager_current_line, sizeof (console_manager_current_line) / 8, 0);
+  memset (console_manager_current_line,  0, sizeof (console_manager_current_line) / 8);
 }
 
 

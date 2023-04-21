@@ -10,7 +10,7 @@ uint8_t tom_current_line_length = 0;
 
 void text_output_manager_clear ()
 {
-  memset (graphics_lines, TOM_COLUMNS * TOM_ROWS, 0);
+  memset (graphics_lines,  0, TOM_COLUMNS * TOM_ROWS);
   tom_current_line = 0;
   tom_current_line_length = 0;
 }
@@ -32,7 +32,7 @@ void text_output_manager_move_line (uint8_t src, uint8_t dst)
 // This will copy the line to the above line
 void text_output_manager_move_all_line_up (uint8_t count)
 {
-  memset (&graphics_lines[0], TOM_ROWS, 0);
+  memset (&graphics_lines[0],  0, TOM_ROWS);
   for (uint8_t index = 0; index < count; index++)
 	{
 	  for (uint8_t line = TOM_ROWS - 1; line > 1; line--)

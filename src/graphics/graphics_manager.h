@@ -10,6 +10,7 @@
 
 typedef struct graphics_manager_runtime_config_t {
 	uint32_t text_color;
+	uint32_t background_color;
 };
 
 extern struct graphics_manager_runtime_config_t gm_runtime_config;

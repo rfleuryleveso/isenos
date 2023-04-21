@@ -41,7 +41,8 @@ void splash_screen (uint64_t start_x, uint64_t end_x, uint64_t start_y, uint64_t
 }
 void gm_init (IBL_ISENOS_DATA *ibl_isenos_data)
 {
-  gm_runtime_config.text_color = 0x00FF00;
+  gm_runtime_config.text_color = 0xFFFFFF;
+  gm_runtime_config.background_color = 0x000000;
   memcpy (&framebuffer_info, ibl_isenos_data->FrameBufferInfo, sizeof (IBL_FRAMEBUFFER_INFO));
   splash_screen (0, framebuffer_info.HorizontalResolution, 0, framebuffer_info.VerticalResolution);
 }
@@ -75,5 +76,6 @@ void gm_render ()
 			}
 		}
 	}
+
 }
 #pragma GCC pop_options

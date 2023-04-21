@@ -25,6 +25,7 @@
 #include "main.h"
 #include "programs/sysinfo.h"
 #include "programs/donut.h"
+#include "programs/matrix.h"
 
 uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 {
@@ -269,7 +270,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   text_output_manager_add_string ("ring0@isen-os: \0");
 
   init_pit (1000);
-  console_manager_init();
+  console_manager_init ();
 
   k_main_loop ();
 
@@ -287,18 +288,31 @@ void k_main_loop ()
 		  counter = 0;
 		}
 	  gm_render ();
-	  isenos_programs_e next_program = console_manager_get_next_program();
-	  if (next_program == ISENOS_PROGRAMS_SCROLL)
+	  isenos_programs_e next_program = console_manager_get_next_program ();
+	  if (next_program != ISENOS_PROGRAMS_NONE)
 		{
-		  color_scroll ();
-		}
-	  else if (next_program == ISENOS_PROGRAMS_SYSINFO)
-		{
-		  sys_info ();
-		}
-	  else if (next_program == ISENOS_PROGRAMS_DONUT)
-		{
-		  donut ();
+		  if (next_program == ISENOS_PROGRAMS_SCROLL)
+			{
+			  scheduler_start_program (next_program);
+			  color_scroll ();
+			}
+		  else if (next_program == ISENOS_PROGRAMS_SYSINFO)
+			{
+			  scheduler_start_program (next_program);
+			  sys_info ();
+			}
+		  else if (next_program == ISENOS_PROGRAMS_DONUT)
+			{
+			  scheduler_start_program (next_program);
+			  donut ();
+			}
+		  else if (next_program == ISENOS_PROGRAMS_MATRIX)
+			{
+			  scheduler_start_program (next_program);
+			  matrix ();
+			}
+		  // quick and dirty hack
+		  console_manager_reset_input ();
 		}
 	  counter++;
 	}

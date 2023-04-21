@@ -95,7 +95,7 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
 {
   // Find all virtual adresses in use
   page_allocation_manager_allocation_t *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
-																						   : (void *)Kmm.pam_base;
+																					: (void *)Kmm.pam_base;
   // Find out the number of used
 
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] Computing table counts for %d allocations @ 0x%x\n", Kmm.pam_allocations_count, base_allocation);
@@ -230,7 +230,7 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
 
   // Find all virtual adresses in use
   page_allocation_manager_allocation_t *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
-																						   : (void *)Kmm.pam_base;
+																					: (void *)Kmm.pam_base;
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] Populating PML4 table, base = 0x%x\n", base);
 
   // Find out the number of used
@@ -301,8 +301,8 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
   // (512*512)/64 = 64 entries = 8*8 entries
   uint64_t *filled_pdp = filled_pml4 + 8 * 8; // 8 * 8 * sizeof(uint64_t) bytes
 
-  memset ((void *)filled_pdp, 8 * 8 * sizeof (uint64_t), 0);
-  memset ((void *)filled_pml4, 8 * sizeof (uint64_t), 0);
+  memset ((void *)filled_pdp, 0, 8 * 8 * sizeof (uint64_t));
+  memset ((void *)filled_pml4, 0, 8 * sizeof (uint64_t));
 
   vmt_compute_tables_counts (&pd_table_count, &pdp_table_count, filled_pml4, filled_pdp);
 
@@ -341,15 +341,11 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
   uint64_t tables_page_virtual = mem_phys_to_virt (tables_page_physical);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] identity_mapped_memory = %d, tables_page_physical = %016"PRIx64 " tables_page_virtual = %016"PRIx64 " \n", identity_mapped_memory, tables_page_physical, tables_page_virtual);
 
-  memset((void*)tables_page_physical, allocated_size, 0);
+  memset ((void *)tables_page_physical,  0, allocated_size);
 
   // Fill the tables
   vmt_populate_page_table ((void *)tables_page_physical, pdp_table_count, pd_table_count, filled_pml4, filled_pdp, 0);
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER] VMT = %016"PRIx64 " \n", tables_page_physical);
-
-
-
-
 
   bitmap_heap_allocation->references_count = 0;
 
