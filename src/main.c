@@ -254,6 +254,9 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	  "movq  %q0, %%rsp"::"r" (ISENOS_KERNEL_STACK_TOP - 0x10)
 	  );
 
+  Kmm.memory_setup_complete = 1;
+  Kmm.pam_allocations = (void*)PAM_BASE;
+
   printf ("Looking for ACPI table");
 
   uint64_t uefi_rsdp = acpi_find_rsdp (ACPI_BASE, ACPI_TOP);
@@ -313,6 +316,12 @@ void k_main_loop ()
 			}
 		  // quick and dirty hack
 		  console_manager_reset_input ();
+		  text_output_manager_clear();
+		  text_output_manager_add_string ("Welcome to ISENOS v1.1\0");
+		  text_output_manager_new_line ();
+		  text_output_manager_add_string ("ring0@isen-os: \0");
+		  gm_clear();
+		  gm_render();
 		}
 	  counter++;
 	}

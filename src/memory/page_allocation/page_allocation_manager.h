@@ -54,4 +54,10 @@ uint64_t pam_find_free_pages (int pages);
  */
 void pam_debug_print ();
 
+/**
+ * Returns the index 0 ptr of the PAM allocations array
+ * @return
+ */
+page_allocation_manager_allocation_t *pam_get_base ();
+
 #endif //ISENOS_PRELOADER_RAM_ALLOCATION_MANAGER_H

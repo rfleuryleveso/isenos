@@ -13,9 +13,6 @@
 
 // Kernel memory information structure
 struct KERNEL_MEMORY_INFORMATION {
-	// lmao, this is beyond hell. This CAN'T go well
-	uint8_t stack[16384];
-
 	// Total available memory in the system
 	uint64_t available_memory;
 

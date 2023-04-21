@@ -26,17 +26,18 @@ void text_output_manager_move_line (uint8_t src, uint8_t dst)
 	{
 	  return;
 	}
-  memcpy (&graphics_lines[dst], &graphics_lines[src], TOM_COLUMNS);
+  memcpy (graphics_lines[dst], graphics_lines[src], TOM_COLUMNS);
 }
 
 // This will copy the line to the above line
 void text_output_manager_move_all_line_up (uint8_t count)
 {
-  memset (&graphics_lines[0],  0, TOM_ROWS);
+
   for (uint8_t index = 0; index < count; index++)
 	{
-	  for (uint8_t line = TOM_ROWS - 1; line > 1; line--)
+	  for (uint8_t line = 1; line <= TOM_ROWS; line++)
 		{
+		  memset (graphics_lines[line-1],  0, TOM_COLUMNS);
 		  text_output_manager_move_line (line, line - 1);
 		}
 	  tom_current_line--;

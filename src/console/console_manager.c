@@ -96,16 +96,19 @@ void console_manager_keyboard_callback (uint8_t scan_code)
 		{
 		  gm_runtime_config.text_color = 0x00FF00;
 		  gm_runtime_config.background_color = 0xFFFFFF;
+		  gm_clear();
 		  text_output_manager_add_string ("Beware of the eyes ;)");
 		}
 	  else
 		{
 		  console_manager.next_program = ISENOS_PROGRAMS_NONE;
 		  text_output_manager_add_string ("ERROR: Unknown program !");
-		}
 
+		  text_output_manager_new_line();
+		  text_output_manager_add_string ("ring0@isen-os: ");
+		}
 	  console_manager_reset_input();
-	  text_output_manager_add_string ("ring0@isen-os: ");
+
 	}
   else if (scan_code == 0x0E)
 	{

@@ -48,7 +48,7 @@ void gm_init (IBL_ISENOS_DATA *ibl_isenos_data)
 }
 void gm_clear ()
 {
-  fill_screen (0, framebuffer_info.HorizontalResolution, 0, framebuffer_info.VerticalResolution, 0x0);
+  fill_screen (0, framebuffer_info.HorizontalResolution, 0, framebuffer_info.VerticalResolution, gm_runtime_config.background_color);
 }
 void gm_render ()
 {
@@ -70,7 +70,7 @@ void gm_render ()
 					  char *font = font8x8_basic[_char];
 					  char font_line = font[font_y];
 					  uint8_t visible = font_line & (1 << font_x);
-					  gm_draw_pixel32bpp (relative_x, relative_y, visible ? gm_runtime_config.text_color : 0x0);
+					  gm_draw_pixel32bpp (relative_x, relative_y, visible ? gm_runtime_config.text_color : gm_runtime_config.background_color);
 					}
 				}
 			}
