@@ -18,14 +18,14 @@
  * @param address
  * @return NULL in case of ERROR, a pointer to the struct if the allocation was found successfuly
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_physical_address (uint64_t address);
+page_allocation_manager_allocation_t *pam_get_allocation_for_physical_address (uint64_t address);
 
 /**
  * Return an allocation by the virtual address in memory handled by this address
  * @param address
  * @return NULL in case of ERROR, a pointer to the struct if the allocation was found successfuly
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_address (uint64_t address);
+page_allocation_manager_allocation_t *pam_get_allocation_for_virtual_address (uint64_t address);
 
 /**
  * Add a new allocation to th
@@ -34,7 +34,7 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_addres
  * @param flags
  * @return
  */
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *
+page_allocation_manager_allocation_t *
 pam_add_allocation (uint64_t physical_address, uint64_t virtual_address, uint64_t flags);
 
 /**

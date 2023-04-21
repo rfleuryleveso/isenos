@@ -28,7 +28,7 @@ struct KERNEL_MEMORY_INFORMATION {
 
 	// Pointer to the table of ram allocations. This is a fixed size
 	// ONLY AVAILABLE WITH memory_setup_complete = true
-	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_allocations;
+	struct page_allocation_manager_allocation_t *pam_allocations;
 
 	// Number of PAM allocations
 	uint64_t pam_allocations_count;

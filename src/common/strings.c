@@ -18,16 +18,22 @@ uint32_t str_len(char *str)
   return result;
 }
 
-int8_t str_cmp(char *str1, char *str2)
+int8_t str_cmp(const char *str1, const char *str2)
 {
-  while ((*str1 != '\0' && *str2 != '\0') && *str1 == *str2) {
-	  *str1+=1;
-	  *str2+=1;
+  while (*str1)
+	{
+	  // if characters differ, or end of the second string is reached
+	  if (*str1 != *str2) {
+		  break;
+		}
+
+	  // move to the next pair of characters
+	  str1++;
+	  str2++;
 	}
-  if (*str1 == *str2)
-	return 0;
-  else
-	return *str1 - *str2;
+
+  // return the ASCII difference after converting `char*` to `unsigned char*`
+  return *(const unsigned char*)str1 - *(const unsigned char*)str2;
 }
 
 void strReverse(char *str)

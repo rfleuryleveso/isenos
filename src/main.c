@@ -19,6 +19,12 @@
 #include "disk/disk.h"
 #include "graphics/text_output_manager.h"
 #include "pit/pit.h"
+#include "programs/colorscroll.h"
+#include "console/console_manager.h"
+#include "scheduler/scheduler.h"
+#include "main.h"
+#include "programs/sysinfo.h"
+#include "programs/donut.h"
 
 uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 {
@@ -33,7 +39,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   printf ("Initializing ISENOS: Kmm = %016"PRIx64"\n");
   printf ("EFI_TABLE = %016"PRIx64"\n", isen_os_entrypoint_data->EfiTablePointer);
 
-  text_output_manager_add_string("Loading ISENOS !\0");
+  text_output_manager_add_string ("Loading ISENOS !\0");
 
   // Compute all usable ram, and add all entries to the Physical Ram Manager
   long long total_usable_ram = 0;
@@ -126,7 +132,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   // This is used to make sure we don't overwrite the VMT
   // Remove them once we updated them
   {
-	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_allocation = pam_get_allocation_for_physical_address (Kmm.virtual_memory_map_base);
+	struct page_allocation_manager_allocation_t *pam_allocation = pam_get_allocation_for_physical_address (Kmm.virtual_memory_map_base);
 	int pages = 0;
 	int required_pages = ceil ((float)(((double)Kmm.virtual_memory_map_top - (double)Kmm.virtual_memory_map_base)
 									   / (double)ISENOS_PAGE_SIZE));
@@ -137,7 +143,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	for (int index = 0; index < required_pages; index++)
 	  {
 
-		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+		page_allocation_manager_allocation_t *allocation = pam_add_allocation (
 			Kmm.virtual_memory_map_base + (ISENOS_PAGE_SIZE * index),
 			Kmm.virtual_memory_map_base + (ISENOS_PAGE_SIZE * index),
 			PAMA_FLAG_VMT | PAMA_FLAG_KERNEL | PAMA_FLAG_PRESENT);
@@ -156,7 +162,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 		KERNEL_MEMORY_MAPPING kernel_memory_mapping = isen_os_entrypoint_data->KernelMemoryMappings[index];
 		for (int page = 0; page < kernel_memory_mapping.PAGES; page++)
 		  {
-			struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+			page_allocation_manager_allocation_t *allocation = pam_add_allocation (
 				kernel_memory_mapping.PhysicalBase + (ISENOS_PAGE_SIZE * page),
 				kernel_memory_mapping.VirtualBase + (ISENOS_PAGE_SIZE * page), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
 			allocation->references_count++;
@@ -166,7 +172,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   }
   // Register the Page allocation manager's pages into the PAM
   {
-	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_allocation = pam_get_allocation_for_physical_address (Kmm.pam_base);
+	struct page_allocation_manager_allocation_t *pam_allocation = pam_get_allocation_for_physical_address (Kmm.pam_base);
 	int pages = 0;
 	int required_pages = ceil ((float)(((double)Kmm.pam_top - (double)Kmm.pam_base)
 									   / (double)ISENOS_PAGE_SIZE));
@@ -175,7 +181,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 	// We map the kernel pages
 	for (int index = 0; index < required_pages; index++)
 	  {
-		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+		page_allocation_manager_allocation_t *allocation = pam_add_allocation (
 			Kmm.pam_base + (ISENOS_PAGE_SIZE * index),
 			PAM_BASE + (ISENOS_PAGE_SIZE * index), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
 		allocation->references_count++;
@@ -183,7 +189,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   }
   // Page allocation for graphics
   {
-	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *framebuffer_allocation = pam_get_allocation_for_physical_address (isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase);
+	struct page_allocation_manager_allocation_t *framebuffer_allocation = pam_get_allocation_for_physical_address (isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase);
 	uint64_t graphics_physical_base = isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase;
 	uint64_t graphics_physical_top = isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase
 									 + isen_os_entrypoint_data->FrameBufferInfo->FrameBufferSize;
@@ -195,7 +201,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
 	for (int index = 0; index < required_pages; index++)
 	  {
-		struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+		page_allocation_manager_allocation_t *allocation = pam_add_allocation (
 			isen_os_entrypoint_data->FrameBufferInfo->FrameBufferBase + (ISENOS_PAGE_SIZE * index),
 			GRAPHICS_BUFFER_BASE + (ISENOS_PAGE_SIZE * index), PAMA_FLAG_PRESENT | PAMA_FLAG_KERNEL);
 		allocation->references_count++;
@@ -213,7 +219,7 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
   // One page for the stack
   {
 	stack_physical_address_base = pam_find_free_pages (1);
-	struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = pam_add_allocation (
+	page_allocation_manager_allocation_t *allocation = pam_add_allocation (
 		stack_physical_address_base,
 		ISENOS_KERNEL_STACK_BASE,
 		PAMA_FLAG_KERNEL | PAMA_FLAG_PRESENT);
@@ -257,22 +263,43 @@ uint64_t main (IBL_ISENOS_DATA *isen_os_entrypoint_data)
 
   // Re-enable interrupts
   enable_interrupts ();
-  text_output_manager_clear();
+  text_output_manager_clear ();
   text_output_manager_add_string ("Welcome to ISENOS v1.1\0");
-  text_output_manager_new_line();
+  text_output_manager_new_line ();
   text_output_manager_add_string ("ring0@isen-os: \0");
-  int counter = 0;
 
-  init_pit(1000);
+  init_pit (1000);
+  console_manager_init();
 
-  while (0 == 0)
-	{
-	  if(counter > 256) {
-		gm_clear();
-		counter = 0;
-	  }
-	  gm_render ();
-	}
+  k_main_loop ();
 
   return 0;
+}
+
+void k_main_loop ()
+{
+  int counter = 0;
+  while (0 == 0)
+	{
+	  if (counter > 256)
+		{
+		  gm_clear ();
+		  counter = 0;
+		}
+	  gm_render ();
+	  isenos_programs_e next_program = console_manager_get_next_program();
+	  if (next_program == ISENOS_PROGRAMS_SCROLL)
+		{
+		  color_scroll ();
+		}
+	  else if (next_program == ISENOS_PROGRAMS_SYSINFO)
+		{
+		  sys_info ();
+		}
+	  else if (next_program == ISENOS_PROGRAMS_DONUT)
+		{
+		  donut ();
+		}
+	  counter++;
+	}
 }

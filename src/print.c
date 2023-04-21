@@ -3,6 +3,7 @@
 //
 
 #include "print.h"
+#include "graphics/text_output_manager.h"
 
 boolean_t _doprnt_truncates = FALSE;
 
@@ -464,4 +465,15 @@ printf (const char *fmt, ...)
   _doprnt (fmt, &listp, write_serial, 16);
   va_end(listp);
 }
+
+void
+printf_ui (const char *fmt, ...)
+{
+  va_list listp;
+
+  va_start(listp, fmt);
+  _doprnt (fmt, &listp, text_output_manager_add, 16);
+  va_end(listp);
+}
+
 #pragma GCC diagnostic pop

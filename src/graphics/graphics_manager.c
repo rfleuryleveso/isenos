@@ -12,7 +12,7 @@ struct graphics_manager_runtime_config_t gm_runtime_config;
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
-static inline void gm_draw_pixel32bpp (int x, int y, uint32_t pixel)
+void gm_draw_pixel32bpp (int x, int y, uint32_t pixel)
 {
   *((uint32_t *)(framebuffer_info.FrameBufferBase + 4 * framebuffer_info.PixelsPerScanLine * y + 4 * x)) = pixel;
 }
@@ -47,10 +47,7 @@ void gm_init (IBL_ISENOS_DATA *ibl_isenos_data)
 }
 void gm_clear ()
 {
-  int max_x =  TOM_COLUMNS * 8 + TOM_COLUMNS * 1 + 8;
-  int max_y =  TOM_ROWS * 8 + TOM_ROWS * 1 + 8;
   fill_screen (0, framebuffer_info.HorizontalResolution, 0, framebuffer_info.VerticalResolution, 0x0);
-
 }
 void gm_render ()
 {

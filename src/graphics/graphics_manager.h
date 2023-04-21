@@ -19,4 +19,6 @@ extern IBL_FRAMEBUFFER_INFO framebuffer_info;
 void gm_init (IBL_ISENOS_DATA *ibl_isenos_data);
 void gm_clear();
 void gm_render();
+void gm_draw_pixel32bpp (int x, int y, uint32_t pixel);
+
 #endif //_GRAPHICS_MANAGER_H_

@@ -8,10 +8,10 @@
 
 volatile char console_manager_current_line[256];
 volatile uint8_t console_manager_current_line_length;
+volatile console_manager_t console_manager;
 
 void console_manager_keyboard_callback (uint8_t scan_code)
 {
-  printf ("Received keyboard scan_code = %d \n", scan_code);
   char kbd_FR[128] =
 	  {
 		  0, 27, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '\b',
@@ -61,15 +61,66 @@ void console_manager_keyboard_callback (uint8_t scan_code)
   else if (scan_code == 0x9c)
 	{
 	  text_output_manager_new_line ();
-	  memset (console_manager_current_line, sizeof (console_manager_current_line) / sizeof (char), 0);
+
+
+	  if (str_cmp (console_manager_current_line, "scroll") == 0)
+		{
+
+		  console_manager.next_program = ISENOS_PROGRAMS_SCROLL;
+		  text_output_manager_add_string ("Starting scroll..");
+		}
+	  else if (str_cmp (console_manager_current_line, "sysinfo") == 0)
+		{
+		  console_manager.next_program = ISENOS_PROGRAMS_SYSINFO;
+		  text_output_manager_add_string ("Starting sysinfo..");
+		}
+	  else if (str_cmp (console_manager_current_line, "doom") == 0)
+		{
+		  console_manager.next_program = ISENOS_PROGRAMS_DOOM;
+		  text_output_manager_add_string ("Starting doom..");
+		}
+	  else if (str_cmp (console_manager_current_line, "donut") == 0)
+		{
+		  console_manager.next_program = ISENOS_PROGRAMS_DONUT;
+		  text_output_manager_add_string ("Starting donut..");
+		}
+	  else
+		{
+		  console_manager.next_program = ISENOS_PROGRAMS_NONE;
+		  text_output_manager_add_string ("ERROR: Unknown program !");
+		}
+
+	  console_manager_reset_input();
 	  text_output_manager_add_string ("ring0@isen-os: ");
 	}
   else if (scan_code == 0x0E)
 	{
-	  if(console_manager_current_line_length == 0) {
-		return;
-	  }
+	  if (console_manager_current_line_length == 0)
+		{
+		  return;
+		}
 	  text_output_manager_remove_char (1);
 	  console_manager_current_line[console_manager_current_line_length--] = 0;
 	}
+}
+isenos_programs_e console_manager_get_next_program ()
+{
+  if (console_manager.next_program != ISENOS_PROGRAMS_NONE)
+	{
+	  isenos_programs_e next_program = console_manager.next_program;
+	  console_manager.next_program = ISENOS_PROGRAMS_NONE;
+	  return next_program;
+	}
+  return ISENOS_PROGRAMS_NONE;
+}
+void console_manager_reset_input()
+{
+  console_manager_current_line_length = 0;
+  memset (console_manager_current_line, sizeof (console_manager_current_line) / 8, 0);
+}
+
+
+void console_manager_init ()
+{
+  console_manager_reset_input();
 }

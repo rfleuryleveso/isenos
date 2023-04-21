@@ -516,12 +516,12 @@ void __attribute__((optimize("O0"))) interrupt_handler_31 ()
 void __attribute__((optimize("O0"))) interrupt_handler_32 ()
 {
   pit_counter_1000hz++;
+  scheduler_tick();
   outb (0x20, 32);
   outb (0xa0, 32);
 }
 void __attribute__((optimize("O0"))) interrupt_handler_33 ()
 {
-  printf (">>>>>>>> INTERRUPT 33 ! \n");
   outb (0x20, 33);
   outb (0xa0, 33);
 

@@ -9,7 +9,7 @@
 
 #define TOM_COLUMNS 60
 
-#define TOM_ROWS 40
+#define TOM_ROWS 60
 
 extern volatile char graphics_lines[TOM_ROWS][TOM_COLUMNS];
 

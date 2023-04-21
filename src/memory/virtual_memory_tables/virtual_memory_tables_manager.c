@@ -94,8 +94,8 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
 								uint64_t *filled_pdp)
 {
   // Find all virtual adresses in use
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
-																						 : (void *)Kmm.pam_base;
+  page_allocation_manager_allocation_t *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
+																						   : (void *)Kmm.pam_base;
   // Find out the number of used
 
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] Computing table counts for %d allocations @ 0x%x\n", Kmm.pam_allocations_count, base_allocation);
@@ -104,7 +104,7 @@ void vmt_compute_tables_counts (uint64_t *pd_table_count, uint64_t *pdp_table_co
   // For each pam idt_entries, set up the corresponding PML4 idt_entries
   for (int pam_allocation_index = 0; pam_allocation_index < Kmm.pam_allocations_count; pam_allocation_index++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[pam_allocation_index];
+	  page_allocation_manager_allocation_t *allocation = &base_allocation[pam_allocation_index];
 	  if ((allocation->flags & PAMA_FLAG_PRESENT) == PAMA_FLAG_PRESENT)
 		{
 		  uint64_t virtual_address = allocation->virtual_start;
@@ -229,8 +229,8 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
 
 
   // Find all virtual adresses in use
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
-																						 : (void *)Kmm.pam_base;
+  page_allocation_manager_allocation_t *base_allocation = Kmm.memory_setup_complete ? Kmm.pam_allocations
+																						   : (void *)Kmm.pam_base;
   printf ("[VIRTUAL_MEMORY_TABLES_MANAGER][DEBUG] Populating PML4 table, base = 0x%x\n", base);
 
   // Find out the number of used
@@ -256,7 +256,7 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
   // For each pam idt_entries, set up the corresponding PML4 idt_entries
   for (int pam_allocation_index = 0; pam_allocation_index < Kmm.pam_allocations_count; pam_allocation_index++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[pam_allocation_index];
+	  page_allocation_manager_allocation_t *allocation = &base_allocation[pam_allocation_index];
 	  if ((allocation->flags & PAMA_FLAG_PRESENT) == PAMA_FLAG_PRESENT)
 		{
 		  uint64_t virtual_address = allocation->virtual_start;
@@ -286,7 +286,7 @@ void vmt_populate_page_table (void *base, uint64_t pdp_table_count, uint64_t pd_
 uint64_t vmtm_update (uint8_t identity_mapped_memory)
 {
   uint64_t bitmaps_heap = pam_find_free_pages (1);
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *bitmap_heap_allocation = pam_add_allocation (
+  page_allocation_manager_allocation_t *bitmap_heap_allocation = pam_add_allocation (
 	  bitmaps_heap,
 	  VMT_BITMAP_BASE, PAMA_FLAG_PRESENT | PAMA_FLAG_VMT);
   bitmap_heap_allocation->references_count = 1;
@@ -328,7 +328,7 @@ uint64_t vmtm_update (uint8_t identity_mapped_memory)
 
   for (int page_index; page_index < pages_count; page_index++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *table_page_allocation = pam_add_allocation (
+	  page_allocation_manager_allocation_t *table_page_allocation = pam_add_allocation (
 		  tables_page_physical + (ISENOS_PAGE_SIZE * page_index),
 		  VMT_BASE + (ISENOS_PAGE_SIZE * page_index), PAMA_FLAG_PRESENT | PAMA_FLAG_VMT);
 

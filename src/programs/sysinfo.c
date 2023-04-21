@@ -3,3 +3,8 @@
 //
 
 #include "sysinfo.h"
+#include "../print.h"
+void sys_info ()
+{
+  printf_ui ("SYSTEM INFO\n");
+}

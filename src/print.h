@@ -35,5 +35,7 @@ void _doprnt (
 
 void
 printf (const char *fmt, ...);
+void
+printf_ui (const char *fmt, ...);
 
 #endif //ISENOS_PRELOADER_PRINT_H

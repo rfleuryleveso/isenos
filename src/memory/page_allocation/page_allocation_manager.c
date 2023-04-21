@@ -4,18 +4,18 @@
 
 #include "page_allocation_manager.h"
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_base ()
+page_allocation_manager_allocation_t *pam_get_base ()
 {
   return Kmm.memory_setup_complete ? Kmm.pam_allocations
 								   : (void *)Kmm.pam_base;
 }
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_physical_address (uint64_t address)
+page_allocation_manager_allocation_t *pam_get_allocation_for_physical_address (uint64_t address)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
+  page_allocation_manager_allocation_t *base_allocation = pam_get_base ();
   for (uint64_t i = 0; i < Kmm.pam_allocations_count; i++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[i];
+	  page_allocation_manager_allocation_t *allocation = &base_allocation[i];
 	  // printf ("Searching allocation for physical address  %016"PRIx64" (ALIGNED = %016"PRIx64") : %016"PRIx64" \n", address, (uint64_t)(ALIGN_PTR(address, ISENOS_PAGE_SIZE)), allocation->physical_start);
 	  if ((uint64_t)(ALIGN_PTR(address, ISENOS_PAGE_SIZE)) == allocation->physical_start)
 		{
@@ -25,12 +25,12 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_physical_addre
   return NULL;
 }
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_address (uint64_t address)
+page_allocation_manager_allocation_t *pam_get_allocation_for_virtual_address (uint64_t address)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
+  page_allocation_manager_allocation_t *base_allocation = pam_get_base ();
   for (uint64_t i = 0; i < Kmm.pam_allocations_count; i++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[i];
+	  page_allocation_manager_allocation_t *allocation = &base_allocation[i];
 	  if (((uint64_t)(ALIGN_PTR(address, ISENOS_PAGE_SIZE)) == allocation->virtual_start))
 		{
 		  return allocation;
@@ -39,12 +39,12 @@ struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_get_allocation_for_virtual_addres
   return NULL;
 }
 
-struct PAGE_ALLOCATION_MANAGER_ALLOCATION *
+page_allocation_manager_allocation_t *
 pam_add_allocation (uint64_t physical_address, uint64_t virtual_address, uint64_t flags)
 {
   uint64_t aligned_virtual_address = ALIGN_PTR(virtual_address, ISENOS_PAGE_SIZE);
   // Find the corresponding page structure
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_allocation_for_physical_address (physical_address);
+  page_allocation_manager_allocation_t *base_allocation = pam_get_allocation_for_physical_address (physical_address);
   if (base_allocation == NULL)
 	{
 	  printf ("[PAGE_ALLOCATION_MANAGER] ERROR ! Could not find page for physical address:  0x%x\n", physical_address);
@@ -58,11 +58,11 @@ pam_add_allocation (uint64_t physical_address, uint64_t virtual_address, uint64_
 
 uint64_t pam_find_free_pages (int pages)
 {
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base ();
+  page_allocation_manager_allocation_t *base_allocation = pam_get_base ();
 
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *current_pam_allocation = NULL;
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_chain_first = NULL;
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *pam_chain_current = NULL;
+  page_allocation_manager_allocation_t *current_pam_allocation = NULL;
+  page_allocation_manager_allocation_t *pam_chain_first = NULL;
+  page_allocation_manager_allocation_t *pam_chain_current = NULL;
 
   uint64_t current_allocated_pages = 0;
   printf ("FreePageFinder: Looking for %d pages, with pam_allocations_count = %d\n",
@@ -121,8 +121,8 @@ void pam_init_find_region ()
   // Find a large enough free memory
   // Compute the required amount of space
   uint64_t pages_count = (Kmm.available_memory - (Kmm.available_memory % ISENOS_PAGE_SIZE)) / ISENOS_PAGE_SIZE;
-  uint64_t ram_allocation_manager_size = (pages_count + 256) * sizeof (struct PAGE_ALLOCATION_MANAGER_ALLOCATION);
-  printf ("[PAGE_ALLOCATION_MANAGER] %d pages will require %d bytes for PAGE_ALLOCATION_MANAGER_ALLOCATION \n", pages_count, ram_allocation_manager_size);
+  uint64_t ram_allocation_manager_size = (pages_count + 256) * sizeof (page_allocation_manager_allocation_t);
+  printf ("[PAGE_ALLOCATION_MANAGER] %d pages will require %d bytes for page_allocation_manager_allocation_t \n", pages_count, ram_allocation_manager_size);
   for (uint64_t index = 0; index < Kmm.prm_ram_range_size; index++)
 	{
 	  struct PRM_RAM_RANGE *ram_range = &Kmm.prm_ram_ranges[index];
@@ -180,7 +180,7 @@ void pam_init_structure ()
 {
   // Find a large enough free memory
   // Compute the required amount of space
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base();
+  page_allocation_manager_allocation_t *base_allocation = pam_get_base();
   uint64_t pam_allocation_index = 0;
 
   // For each physical address range
@@ -193,7 +193,7 @@ void pam_init_structure ()
 		   address += ISENOS_PAGE_SIZE)
 		{
 		  // printf ("[PAGE_ALLOCATION_MANAGER] Init structure %4d for PhysicalRamRange #%d, Physical Address: 0x%x \n", pam_allocation_index, range_index, address);
-		  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *current_allocation = &base_allocation[pam_allocation_index++];
+		  page_allocation_manager_allocation_t *current_allocation = &base_allocation[pam_allocation_index++];
 		  current_allocation->physical_start = address;
 		}
 	}
@@ -211,13 +211,13 @@ void pam_init ()
 void pam_debug_print ()
 {
 
-  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *base_allocation = pam_get_base();
+  page_allocation_manager_allocation_t *base_allocation = pam_get_base();
 
   printf ("[PAGE_ALLOCATION_MANAGER][DEBUG] Printing %d allocations @ 0x%x\n", Kmm.pam_allocations_count, base_allocation);
   // For each pam idt_entries
   for (int pam_allocation_index = 0; pam_allocation_index < Kmm.pam_allocations_count; pam_allocation_index++)
 	{
-	  struct PAGE_ALLOCATION_MANAGER_ALLOCATION *allocation = &base_allocation[pam_allocation_index];
+	  page_allocation_manager_allocation_t *allocation = &base_allocation[pam_allocation_index];
 	  if ((allocation->flags & PAMA_FLAG_PRESENT) == PAMA_FLAG_PRESENT)
 		{
 		  printf ("	%04d : PHYSICAL_START = %016"PRIx64" VIRTUAL_START = %016"PRIx64" FLAGS = %04"PRIx64" REFERENCES_COUNT = %d\n", pam_allocation_index, allocation->physical_start, allocation->virtual_start, allocation->flags, allocation->references_count);

@@ -28,7 +28,7 @@ uint32_t str_len(char *);
  *
  * @return int8_t 0 if the strings are equals, else some magic int.
  */
-int8_t str_cmp(char *, char *);
+int8_t str_cmp(const char *str1, const char *str2);
 
 /**
  * @brief reverses a string
